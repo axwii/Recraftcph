@@ -1,0 +1,43 @@
+---
+const { pageTitle } = Astro.props;
+---
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{pageTitle}</title>
+</head>
+<html lang="en">
+  <body>
+    <header>
+      <nav><a href="/">home</a><a href="/about">historie</a><a href="/singleveiw">LineUp</a></nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <div class="grid_1-2-2">
+        <img src="/images/logo.png" alt="logo" />
+        <div class="contact">
+          <h3>kontakt os</h3>
+          <p>info@recraftcph.dk</p>
+          <h3>Find os</h3>
+          <p>Vejnavn 193, 1432 Copenhagen</p>
+        </div>
+        <div class="pages">
+          <a href="/index"><h3>Forside</h3></a>
+          <a href="/about"><h3>Om os</h3></a>
+        </div>
+      </div>
+      <div class="SoMe">
+        <div class="icons">
+          <img id="insta" src="/images/instagram.png" alt="instagram" />
+          <img id="facebook" src="images/Vector.png" alt="facebook" />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
