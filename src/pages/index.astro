@@ -11,7 +11,7 @@
     <title>Astro</title>
   </head>
   <body>
-    <h1>Recraft CPH</h1>
+    <h1>Recraft cph</h1>
     <h2>En verden i læder</h2>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus facere
@@ -19,27 +19,79 @@
       nihil non inventore maiores iste tempore consequatur! Eius velit
       temporibus natus tempore.
     </p>
-    <img src="" alt="" />
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum sit hic
-      odio laborum rem explicabo sequi dicta officiis dolor obcaecati, pariatur
-      voluptate? Tenetur architecto omnis similique explicabo cupiditate ab
-      aspernatur.
-    </p>
+    <div class="mille_container">
+      <img src="img/mille.webp" alt="mille" />
+      <p>
+        Hejsa, Mit navn er Mille Marie og det er mig som er designeren og
+        syersken bag mit brand: Recraft cph. Jeg går ind for bæredygtighed og
+        genanvendelse af fraklippet læder og tekstiler.
+      </p>
+    </div>
+
     <h2>Kitchenware</h2>
-    <img src="" alt="" />
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae
-      temporibus nemo sed voluptatibus voluptatum quas. Deleniti, perferendis.
-      Officia saepe consequuntur autem natus neque, porro, provident nobis
-      placeat pariatur ut tempora?
-    </p>
-    <h2>Accesories</h2>
-    <img src="" alt="" />
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-      quibusdam, quod laborum velit magni expedita totam ea deleniti fuga sed
-      natus adipisci accusantium ipsa aliquid odit suscipit nihil. Eos, minima!
-    </p>
+    <div class="kitchenware_container">
+      <img src="img/grydelapper.webp" alt="grydelapper" />
+      <img src="img/kaffevarmer.webp" alt="kaffe varmer" class="ekstra_img" />
+      <img src="img/tehætte.webp" alt="te hætte" class="ekstra_img" />
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae
+        temporibus nemo sed voluptatibus voluptatum quas. Deleniti, perferendis.
+        Officia saepe consequuntur autem natus neque, porro, provident nobis
+        placeat pariatur ut tempora?
+      </p>
+    </div>
+    <div class="accesories_container">
+      <h2>Accesories</h2>
+      <img src="img/makeuppung.webp" alt="makeup pung" />
+      <img src="img/taske.webp" alt="blå taske" class="ekstra_img" />
+      <img
+        src="img/grønmakeuppung.webp"
+        alt="grøn makeup pung"
+        class="ekstra_img"
+      />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+        quibusdam, quod laborum velit magni expedita totam ea deleniti fuga sed
+        natus adipisci accusantium ipsa aliquid odit suscipit nihil. Eos,
+        minima!
+      </p>
+    </div>
   </body>
+
+  <style>
+    img {
+      max-width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .mille_container {
+      background-color: #ede8e1;
+    }
+
+    /* Skjul de ekstra billeder på mobil */
+    .ekstra_img {
+      display: none;
+    }
+
+    /* Desktop styling */
+    @media (min-width: 800px) {
+      .kitchenware_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+      }
+
+      /* Vis de ekstra billeder på desktop */
+      .ekstra_img {
+        display: block;
+      }
+    }
+  </style>
 </html>
