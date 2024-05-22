@@ -29,9 +29,13 @@
     </div>
 
     <h2>Kitchenware</h2>
-    <div class="kitchenware_container">
+    <div class="billede_container">
       <img src="img/grydelapper.webp" alt="grydelapper" />
-      <img src="img/kaffevarmer.webp" alt="kaffe varmer" class="ekstra_img" />
+      <img
+        src="img/grillhandsker.webp"
+        alt="grill handsker"
+        class="ekstra_img"
+      />
       <img src="img/tehætte.webp" alt="te hætte" class="ekstra_img" />
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae
@@ -40,21 +44,21 @@
         placeat pariatur ut tempora?
       </p>
     </div>
-    <div class="accesories_container">
-      <h2>Accesories</h2>
+    <h2>Accesories</h2>
+    <div class="billede_container">
       <img src="img/makeuppung.webp" alt="makeup pung" />
-      <img src="img/taske.webp" alt="blå taske" class="ekstra_img" />
-      <img
-        src="img/grønmakeuppung.webp"
-        alt="grøn makeup pung"
-        class="ekstra_img"
-      />
+      <img src="img/grøntaske.webp" alt="grøn taske" class="ekstra_img" />
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
         quibusdam, quod laborum velit magni expedita totam ea deleniti fuga sed
         natus adipisci accusantium ipsa aliquid odit suscipit nihil. Eos,
         minima!
       </p>
+      <img
+        src="img/grønmakeuppung.webp"
+        alt="grøn makeup pung"
+        class="ekstra_img"
+      />
     </div>
   </body>
 
@@ -69,6 +73,14 @@
 
     h2 {
       text-align: center;
+      margin-top: 50px;
+    }
+
+    p {
+      margin-bottom: 50px;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: justify;
     }
 
     .mille_container {
@@ -82,15 +94,24 @@
 
     /* Desktop styling */
     @media (min-width: 800px) {
-      .kitchenware_container {
+      .billede_container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
       }
 
+      .billede_container img {
+        margin: 5px;
+      }
+
       /* Vis de ekstra billeder på desktop */
       .ekstra_img {
         display: block;
+      }
+
+      .mille_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
       }
     }
   </style>
