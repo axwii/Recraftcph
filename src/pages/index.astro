@@ -1,61 +1,53 @@
 ---
-import { createClient } from '@supabase/supabase-js'
+import Frame from "../layout/frame.astro";
+import Testsupabase from "../components/Testsupabase.astro";
 
-const supabaseUrl = import.meta.env.SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.SUPABASE_ANON_KEY;
+const data = await fetch("https://hkltapzneruelglyxqhl.supabase.co/rest/v1/Recraftcph?select=*",{
+  method:"GET",
+  headers:{
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhrbHRhcHpuZXJ1ZWxnbHl4cWhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1OTMyOTksImV4cCI6MjAzMTE2OTI5OX0.FQkPXh4GnFu6SnWkHdluQYFqHcG2cY2eE5Q8AnBtOlw"
+  }
+}).then(res=>res.json());
 
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
-async function logData() {
-  let { data, error } = await supabase
-    .from('your_table')
-    .select('*')
-
-  if (error) console.error('Error: ', error);
-  else console.log('Data: ', data);
-}
-
-logData();
+console.log(data);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Recraft CPH</h1>
-    <h2>En verden i læder</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus facere
-      nulla aspernatur cum, nisi, reprehenderit commodi beatae, dignissimos
-      nihil non inventore maiores iste tempore consequatur! Eius velit
-      temporibus natus tempore.
-    </p>
-    <img src="" alt="" />
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum sit hic
-      odio laborum rem explicabo sequi dicta officiis dolor obcaecati, pariatur
-      voluptate? Tenetur architecto omnis similique explicabo cupiditate ab
-      aspernatur.
-    </p>
-    <h2>Kitchenware</h2>
-    <img src="" alt="" />
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae
-      temporibus nemo sed voluptatibus voluptatum quas. Deleniti, perferendis.
-      Officia saepe consequuntur autem natus neque, porro, provident nobis
-      placeat pariatur ut tempora?
-    </p>
-    <h2>Accesories</h2>
-    <img src="" alt="" />
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-      quibusdam, quod laborum velit magni expedita totam ea deleniti fuga sed
-      natus adipisci accusantium ipsa aliquid odit suscipit nihil. Eos, minima!
-    </p>
-  </body>
-</html>
+<Frame pageTitle="Recractcph - Hjem">
+  <h1>Recraft CPH</h1>
+  <h2>En verden i læder</h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus facere
+    nulla aspernatur cum, nisi, reprehenderit commodi beatae, dignissimos
+    nihil non inventore maiores iste tempore consequatur! Eius velit
+    temporibus natus tempore.
+  </p>
+  <img src="" alt="" />
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum sit hic
+    odio laborum rem explicabo sequi dicta officiis dolor obcaecati, pariatur
+    voluptate? Tenetur architecto omnis similique explicabo cupiditate ab
+    aspernatur.
+  </p>
+  <h2>Kitchenware</h2>
+  <img src="" alt="" />
+  <p>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae
+    temporibus nemo sed voluptatibus voluptatum quas. Deleniti, perferendis.
+    Officia saepe consequuntur autem natus neque, porro, provident nobis
+    placeat pariatur ut tempora?
+  </p>
+  <h2>Accesories</h2>
+  <img src="" alt="" />
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+    quibusdam, quod laborum velit magni expedita totam ea deleniti fuga sed
+    natus adipisci accusantium ipsa aliquid odit suscipit nihil. Eos, minima!
+  </p>
+  <section>
+    {
+    data.map((item) => {
+      return <Testsupabase data={item} />
+    })
+    }
+  </section>
+</Frame>
