@@ -1,15 +1,5 @@
 ---
 import Frame from "../layout/frame.astro";
-import Testsupabase from "../components/Testsupabase.astro";
-
-const data = await fetch("https://hkltapzneruelglyxqhl.supabase.co/rest/v1/Recraftcph?select=*",{
-  method:"GET",
-  headers:{
-    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhrbHRhcHpuZXJ1ZWxnbHl4cWhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1OTMyOTksImV4cCI6MjAzMTE2OTI5OX0.FQkPXh4GnFu6SnWkHdluQYFqHcG2cY2eE5Q8AnBtOlw"
-  }
-}).then(res=>res.json());
-
-console.log(data);
 ---
 
 <Frame pageTitle="Recractcph - Hjem">
@@ -43,11 +33,4 @@ console.log(data);
     quibusdam, quod laborum velit magni expedita totam ea deleniti fuga sed
     natus adipisci accusantium ipsa aliquid odit suscipit nihil. Eos, minima!
   </p>
-  <section>
-    {
-    data.map((item) => {
-      return <Testsupabase data={item} />
-    })
-    }
-  </section>
 </Frame>
