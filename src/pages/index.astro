@@ -1,188 +1,170 @@
 ---
-
+import Frame from "../layout/frame.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <header><a href="/singleview">product</a></header>
-  <body>
-    <h1>Recraft cph</h1>
-    <h2>En verden i læder</h2>
-    <p class="velkommen">
-      Velkommen til Recraft cph, hvor hvert produkt er et skridt mod en mere
-      bæredygtig fremtid og en hyldest til den skønhed, vi finder i
-      genanvendelse og kreativitet.
+<Frame pageTitle="Recractcph - Hjem">
+  <h1>Recraft cph</h1>
+  <h2>En verden i læder</h2>
+  <p class="velkommen">
+    Velkommen til Recraft cph, hvor hvert produkt er et skridt mod en mere
+    bæredygtig fremtid og en hyldest til den skønhed, vi finder i genanvendelse
+    og kreativitet.
+  </p>
+  <div class="mille_container">
+    <img src="img/mille.webp" alt="mille" />
+    <p>
+      Hejsa, Mit navn er Mille Marie, og det er mig som er designeren og
+      syersken bag mit brand: Recraft cph. Jeg går ind for bæredygtighed og
+      genanvendelse af fraklippet læder og tekstiler.
+
+      <br /><br />Min passion for håndværk og kærlighed til miljøet driver mig
+      til at skabe unikke og smukke produkter, der ikke kun er et udtryk for min
+      kreativitet, men også min overbevisning om en mere bæredygtig fremtid. Jeg
+      tror på at reducere spild og give materialer et nyt liv. Ved at bruge
+      restmaterialer og genanvende læder og tekstiler formår jeg at skabe
+      produkter med en unik historie og en grøn samvittighed. Jeg stræber efter
+      at forene æstetik og ansvarlighed, så mine kunder kan føle sig godt tilpas
+      med deres valg, mens de samtidig nyder smukke og funktionelle produkter.
     </p>
-    <div class="mille_container">
-      <img src="img/mille.webp" alt="mille" />
+  </div>
+
+  <h2>Kitchenware</h2>
+  <div class="billede_container">
+    <img src="img/grydelapper.webp" alt="grydelapper" />
+    <img src="img/grillhandsker.webp" alt="grill handsker" class="ekstra_img" />
+    <img src="img/tehætte.webp" alt="te hætte" class="ekstra_img" />
+    <div class="tekst_knap">
       <p>
-        Hejsa, Mit navn er Mille Marie, og det er mig som er designeren og
-        syersken bag mit brand: Recraft cph. Jeg går ind for bæredygtighed og
-        genanvendelse af fraklippet læder og tekstiler.
-
-        <br /><br />Min passion for håndværk og kærlighed til miljøet driver mig
-        til at skabe unikke og smukke produkter, der ikke kun er et udtryk for
-        min kreativitet, men også min overbevisning om en mere bæredygtig
-        fremtid. Jeg tror på at reducere spild og give materialer et nyt liv.
-        Ved at bruge restmaterialer og genanvende læder og tekstiler formår jeg
-        at skabe produkter med en unik historie og en grøn samvittighed. Jeg
-        stræber efter at forene æstetik og ansvarlighed, så mine kunder kan føle
-        sig godt tilpas med deres valg, mens de samtidig nyder smukke og
-        funktionelle produkter.
+        Hvert produkt er skabt med opmærksomhed og bæredygtihed i tankerne for
+        at sikre, at dit køkkenudstyr ikke kun er funktionelt, men også smukt
+        udført. Opdag den unikke charme og kvalitet, som kun håndlavede
+        produkter kan tilbyde, og gør din madlavning til en endnu mere
+        fornøjelig oplevelse med de håndlavede køkkenudstyr. <br /><br />Du
+        finder alt fra smukke grydelapper, der både beskytter dine hænder og
+        tilføjer et strejf af elegance til dit køkken, til praktiske
+        grillhandsker, der gør grillaftener til en leg, og alt hvad du behøver
+        for at gøre madlavningen til en fornøjelse. Bliv inspireret til at skabe
+        kulinariske mesterværker derhjemme og udforsk produkterne i dag.
       </p>
+      <a href="/listeview" class="knap">Se produkter</a>
     </div>
-
-    <h2>Kitchenware</h2>
-    <div class="billede_container">
-      <img src="img/grydelapper.webp" alt="grydelapper" />
-      <img
-        src="img/grillhandsker.webp"
-        alt="grill handsker"
-        class="ekstra_img"
-      />
-      <img src="img/tehætte.webp" alt="te hætte" class="ekstra_img" />
-      <div class="tekst_knap">
-        <p>
-          Hvert produkt er skabt med opmærksomhed og bæredygtihed i tankerne for
-          at sikre, at dit køkkenudstyr ikke kun er funktionelt, men også smukt
-          udført. Opdag den unikke charme og kvalitet, som kun håndlavede
-          produkter kan tilbyde, og gør din madlavning til en endnu mere
-          fornøjelig oplevelse med de håndlavede køkkenudstyr. <br /><br />Du
-          finder alt fra smukke grydelapper, der både beskytter dine hænder og
-          tilføjer et strejf af elegance til dit køkken, til praktiske
-          grillhandsker, der gør grillaftener til en leg, og alt hvad du behøver
-          for at gøre madlavningen til en fornøjelse. Bliv inspireret til at
-          skabe kulinariske mesterværker derhjemme og udforsk produkterne i dag.
-        </p>
-        <a href="/listeview" class="knap">Se produkter</a>
-      </div>
+  </div>
+  <h2>Accesories</h2>
+  <div class="billede_container">
+    <img src="img/makeuppung.webp" alt="makeup pung" />
+    <img src="img/grøntaske.webp" alt="grøn taske" class="ekstra_img" />
+    <div class="tekst_knap">
+      <p>
+        Hver accessory er omhyggeligt fremstillet med fokus på opmærksomhed og
+        bæredygtighed for at sikre, at dine accessories ikke kun er praktiske,
+        men også smukt udførte. Opdag den unikke charme og kvalitet, som kun
+        håndlavede produkter kan tilbyde, og gør dine daglige rutiner til en
+        endnu mere fornøjelig oplevelse med vores eksklusive accessories. <br />
+        <br /> Du vil finde alt fra elegante makeup-punge, der organiserer dine skønhedsprodukter
+        med stil, til funktionelle tasker, der fuldender dit outfit med både elegance
+        og funktionalitet. Udvalget spænder bredt og byder på accessories til enhver
+        smag, så du kan tilføje et personligt præg til dit look og din hverdag. Bliv
+        inspireret af det unikke udvalg af håndlavede accessories og gør din stil
+        til en refleksion af din personlighed og smag.
+      </p>
+      <a href="/listeview" class="knap">Se produkter</a>
     </div>
-    <h2>Accesories</h2>
-    <div class="billede_container">
-      <img src="img/makeuppung.webp" alt="makeup pung" />
-      <img src="img/grøntaske.webp" alt="grøn taske" class="ekstra_img" />
-      <div class="tekst_knap">
-        <p>
-          Hver accessory er omhyggeligt fremstillet med fokus på opmærksomhed og
-          bæredygtighed for at sikre, at dine accessories ikke kun er praktiske,
-          men også smukt udførte. Opdag den unikke charme og kvalitet, som kun
-          håndlavede produkter kan tilbyde, og gør dine daglige rutiner til en
-          endnu mere fornøjelig oplevelse med vores eksklusive accessories. <br
-          />
-          <br /> Du vil finde alt fra elegante makeup-punge, der organiserer dine
-          skønhedsprodukter med stil, til funktionelle tasker, der fuldender dit
-          outfit med både elegance og funktionalitet. Udvalget spænder bredt og byder
-          på accessories til enhver smag, så du kan tilføje et personligt præg til
-          dit look og din hverdag. Bliv inspireret af det unikke udvalg af håndlavede
-          accessories og gør din stil til en refleksion af din personlighed og smag.
-        </p>
-        <a href="/listeview" class="knap">Se produkter</a>
-      </div>
-      <img
-        src="img/grønmakeuppung.webp"
-        alt="grøn makeup pung"
-        class="ekstra_img"
-      />
-    </div>
-  </body>
+    <img
+      src="img/grønmakeuppung.webp"
+      alt="grøn makeup pung"
+      class="ekstra_img"
+    />
+  </div>
+</Frame>
 
-  <style>
-    img {
-      max-width: 100%;
-    }
+<style>
+  img {
+    max-width: 100%;
+  }
 
-    h1 {
-      text-align: center;
-    }
+  h1 {
+    text-align: center;
+  }
 
-    h2 {
-      text-align: center;
-      margin-top: 50px;
-    }
+  h2 {
+    text-align: center;
+    margin-top: 50px;
+  }
 
-    p {
-      margin-bottom: 50px;
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: justify;
-    }
+  p {
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: justify;
+  }
 
-    .velkommen {
-      text-align: center;
-    }
+  .velkommen {
+    text-align: center;
+  }
 
+  .mille_container {
+    background-color: #ede8e1;
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+  .mille_container p {
+    margin-top: 20px;
+  }
+
+  /* Skjul de ekstra billeder på mobil */
+  .ekstra_img {
+    display: none;
+  }
+
+  .knap {
+    background-color: #616c5b;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: block;
+    max-width: 150px;
+    margin: 20px auto;
+  }
+
+  .knap:hover {
+    background-color: #bab8a1;
+  }
+  .tekst_knap {
+    margin-top: 20px;
+  }
+
+  /* Desktop styling */
+  @media (min-width: 800px) {
     .mille_container {
-      background-color: #ede8e1;
-      margin-top: 20px;
-      padding-bottom: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding-bottom: 0;
     }
-    .mille_container p {
-      margin-top: 20px;
+    .billede_container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      align-items: center;
     }
 
-    /* Skjul de ekstra billeder på mobil */
+    .billede_container img {
+      margin: 5px;
+    }
+
+    /* Vis de ekstra billeder på desktop */
     .ekstra_img {
-      display: none;
-    }
-
-    .knap {
-      background-color: #616c5b;
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      font-size: 20px;
-      padding: 10px 10px;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
       display: block;
-      max-width: 150px;
-      margin: 20px auto;
     }
 
-    .knap:hover {
-      background-color: #bab8a1;
-    }
     .tekst_knap {
-      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-
-    /* Desktop styling */
-    @media (min-width: 800px) {
-      .mille_container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        padding-bottom: 0;
-      }
-      .billede_container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        align-items: center;
-      }
-
-      .billede_container img {
-        margin: 5px;
-      }
-
-      /* Vis de ekstra billeder på desktop */
-      .ekstra_img {
-        display: block;
-      }
-
-      .tekst_knap {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-    }
-  </style>
-
-
-</html>
+  }
+</style>

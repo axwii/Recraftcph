@@ -1,0 +1,26 @@
+---
+import Frame from "../layout/frame.astro";
+import ProductCard from "../components/ProductCard.astro";
+
+const data = await fetch("https://hkltapzneruelglyxqhl.supabase.co/rest/v1/Recraftcph?select=*",{
+  method:"GET",
+  headers:{
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhrbHRhcHpuZXJ1ZWxnbHl4cWhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1OTMyOTksImV4cCI6MjAzMTE2OTI5OX0.FQkPXh4GnFu6SnWkHdluQYFqHcG2cY2eE5Q8AnBtOlw"
+  }
+}).then(res=>res.json());
+
+console.log(data);
+---
+
+<Frame pageTitle="Recractcph - Produkter">
+        <h1>Produkter</h1>
+        <p>Her kan du se vores produkter</p>
+        <p>Vi har {data.length} produkter</p>
+    <section>
+        {
+        data.map((item) => {
+          return <ProductCard data={item} />
+        })
+        }
+      </section>
+</Frame>
