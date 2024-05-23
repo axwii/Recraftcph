@@ -14,18 +14,27 @@
   <body>
     <h1>Recraft cph</h1>
     <h2>En verden i læder</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus facere
-      nulla aspernatur cum, nisi, reprehenderit commodi beatae, dignissimos
-      nihil non inventore maiores iste tempore consequatur! Eius velit
-      temporibus natus tempore.
+    <p class="velkommen">
+      Velkommen til Recraft cph, hvor hvert produkt er et skridt mod en mere
+      bæredygtig fremtid og en hyldest til den skønhed, vi finder i
+      genanvendelse og kreativitet.
     </p>
     <div class="mille_container">
       <img src="img/mille.webp" alt="mille" />
       <p>
-        Hejsa, Mit navn er Mille Marie og det er mig som er designeren og
+        Hejsa, Mit navn er Mille Marie, og det er mig som er designeren og
         syersken bag mit brand: Recraft cph. Jeg går ind for bæredygtighed og
         genanvendelse af fraklippet læder og tekstiler.
+
+        <br /><br />Min passion for håndværk og kærlighed til miljøet driver mig
+        til at skabe unikke og smukke produkter, der ikke kun er et udtryk for
+        min kreativitet, men også min overbevisning om en mere bæredygtig
+        fremtid. Jeg tror på at reducere spild og give materialer et nyt liv.
+        Ved at bruge restmaterialer og genanvende læder og tekstiler formår jeg
+        at skabe produkter med en unik historie og en grøn samvittighed. Jeg
+        stræber efter at forene æstetik og ansvarlighed, så mine kunder kan føle
+        sig godt tilpas med deres valg, mens de samtidig nyder smukke og
+        funktionelle produkter.
       </p>
     </div>
 
@@ -104,8 +113,17 @@
       text-align: justify;
     }
 
+    .velkommen {
+      text-align: center;
+    }
+
     .mille_container {
       background-color: #ede8e1;
+      margin-top: 20px;
+      padding-bottom: 20px;
+    }
+    .mille_container p {
+      margin-top: 20px;
     }
 
     /* Skjul de ekstra billeder på mobil */
@@ -140,11 +158,13 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
+        padding-bottom: 0;
       }
       .billede_container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
+        align-items: center;
       }
 
       .billede_container img {
