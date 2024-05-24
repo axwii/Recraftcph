@@ -12,11 +12,9 @@ const data = await fetch(
     },
   }
 ).then((res) => res.json());
-
-console.log(data);
 ---
 
-<Frame pageTitle="Recractcph - Produkter">
+<Frame pageTitle="Recraftcph - Produkter">
   <div class="center-text">
     <h1>Produkter</h1>
     <p>Her kan du se vores produkter</p>
@@ -32,7 +30,7 @@ console.log(data);
     {
       data.map((item) => {
         return (
-          <a href={`/product/${item.id}`}>
+          <a href={`/products/${item.slug}`}>
             <ProductCard data={item} />
           </a>
         );

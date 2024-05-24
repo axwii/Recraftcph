@@ -1,0 +1,29 @@
+---
+import Frame from "../../layout/frame.astro";
+export async function getStaticPaths() {
+  const data = await fetch(
+    "https://hkltapzneruelglyxqhl.supabase.co/rest/v1/Recraftcph?select=*",
+    {
+      method: "GET",
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhrbHRhcHpuZXJ1ZWxnbHl4cWhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1OTMyOTksImV4cCI6MjAzMTE2OTI5OX0.FQkPXh4GnFu6SnWkHdluQYFqHcG2cY2eE5Q8AnBtOlw",
+      },
+    }
+  ).then((response) => response.json());
+
+  return data.map((product) => {
+    return {
+      params: { slug: product.slug },
+      props: { myData: product },
+    };
+  });
+}
+const { myData } = Astro.props;
+console.log(myData);
+---
+
+<Frame title={myData.name}>
+  <h2>{myData.name}</h2>
+  <p>{myData.price}</p>
+</Frame>
