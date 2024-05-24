@@ -20,7 +20,7 @@ console.log(data);
   <h1>Produkter</h1>
   <p>Her kan du se vores produkter</p>
   <p>Vi har {data.length} produkter</p>
-  <section>
+  <section class="product-grid">
     {
       data.map((item) => {
         return <ProductCard data={item} />;
@@ -28,3 +28,17 @@ console.log(data);
     }
   </section>
 </Frame>
+
+<style>
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  </style>
