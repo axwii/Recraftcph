@@ -17,13 +17,25 @@ console.log(data);
 ---
 
 <Frame pageTitle="Recractcph - Produkter">
-  <h1>Produkter</h1>
-  <p>Her kan du se vores produkter</p>
-  <p>Vi har {data.length} produkter</p>
+  <div class="center-text">
+    <h1>Produkter</h1>
+    <p>Her kan du se vores produkter</p>
+    <p>Vi har {data.length} produkter</p>
+  </div>
+  <div class="sortingBox">
+    <p>Tasker</p>
+    <p>Nibs</p>
+    <p>Køkken</p>
+    <p>Pynt</p>
+  </div>
   <section class="product-grid">
     {
       data.map((item) => {
-        return <ProductCard data={item} />;
+        return (
+          <a href={`/product/${item.id}`}>
+            <ProductCard data={item} />
+          </a>
+        );
       })
     }
   </section>
@@ -34,11 +46,27 @@ console.log(data);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1rem;
+    max-width: 1200px; /* Adjust this value as needed */
+    margin: 0 auto;
+  }
+  .center-text {
+    text-align: center;
   }
 
-  @media (max-width: 600px) {
-    .product-grid {
-      grid-template-columns: 1fr;
-    }
+  a {
+    text-decoration: none;
+    color: inherit;
   }
-  </style>
+
+  .sortingBox {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .sortingBox p {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    text-align: center;
+  }
+</style>
