@@ -28,16 +28,22 @@ console.log(myData);
   <script>
     let slideIndex = 1;
     showSlides(slideIndex);
-  
+
     function plusSlides(n) {
-      showSlides(slideIndex += n);
+      showSlides((slideIndex += n));
     }
-  
+
     function showSlides(n) {
       let i;
-      let slides = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLDivElement>;
-      if (n > slides.length) { slideIndex = 1 }
-      if (n < 1) { slideIndex = slides.length }
+      let slides = document.getElementsByClassName(
+        "mySlides"
+      ) as HTMLCollectionOf<HTMLDivElement>;
+      if (n > slides.length) {
+        slideIndex = 1; 
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
       for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
@@ -115,165 +121,166 @@ console.log(myData);
       <img src="../../public/img/tehætte.webp" alt="hætte" style="width:65%" />
     </div>
   </div>
-  
-<style>
-  .slideshow-and-product-container {
-    position: relative;
-    text-align: center;
-  }
 
-  .slideshow-container {
-    position: relative;
-  }
-
-  .mySlides {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-  .mySlides img {
-    width: 49.7%;
-  }
-
-  .box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 320px;
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid black;
-    padding: 20px;
-    z-index: 10;
-  }
-
-  .btn {
-    background-color: #616C5B;
-    border: 0;
-    padding: 0.7em 4em;
-    color: white;
-    margin-top: 10px;
-    cursor: pointer;
-  }
-
-  .productname {
-    margin-top: 0;
-  }
-
-  select {
-    padding: 0.8em 2em;
-    border-radius: 30px;
-    width: 40%;
-    margin-bottom: 10px;
-  }
-
-  .grid_1-1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-top: 20px;
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  .højre {
-    text-align: center;
-    align-self: start;
-  }
-
-  .beskrivelse1, .beskrivelse2, .beskrivelse3 {
-    border-top: 1.5px solid;
-    padding: 20px;
-  }
-
-  .beskrivelse3 {
-    border-bottom: 1.5px solid;
-  }
-
-  .venstre {
-    margin-top: 50px;
-  }
-
-  .venstre p {
-    margin: 20px;
-  }
-
-  .product-info-mobile {
-    display: none;
-    text-align: center;
-    padding: 5px;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid black;
-    margin-top: 20px;
-  }
-
-  /* Next & previous buttons */
-  .prev,
-  .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-
-  .prev {
-    left: 0;
-  }
-
-  .prev:hover,
-  .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-
-  @media (max-width: 800px) {
-    .grid_1-1 {
-      display: grid;
-      grid-template-columns: 1fr;
+  <style>
+    .slideshow-and-product-container {
+      position: relative;
+      text-align: center;
     }
 
-    .box {
-      display: none;
+    .slideshow-container {
+      position: relative;
     }
 
-    .mySlides img:nth-child(2) {
-      display: none;
+    .mySlides {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
     }
 
     .mySlides img {
+      width: 49.7%;
+    }
+
+    .box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 320px;
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid black;
+      padding: 20px;
+      z-index: 10;
+    }
+
+    .btn {
+      background-color: #616c5b;
+      border: 0;
+      padding: 0.7em 4em;
+      color: white;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .productname {
+      margin-top: 0;
+    }
+
+    select {
+      padding: 0.8em 2em;
+      border-radius: 30px;
+      width: 40%;
+      margin-bottom: 10px;
+    }
+
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
       width: 100%;
+      max-width: 1200px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .højre {
+      text-align: center;
+      align-self: start;
+    }
+
+    .beskrivelse1,
+    .beskrivelse2,
+    .beskrivelse3 {
+      border-top: 1.5px solid;
+      padding: 20px;
+    }
+
+    .beskrivelse3 {
+      border-bottom: 1.5px solid;
+    }
+
+    .venstre {
+      margin-top: 50px;
+    }
+
+    .venstre p {
+      margin: 20px;
     }
 
     .product-info-mobile {
-      display: block;
-      border: 0;
-      margin: 5px 0 5px 0;
+      display: none;
+      text-align: center;
+      padding: 5px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid black;
+      margin-top: 20px;
     }
-    .product-info-mobile select{
-      width: 25%;
-    }
-    .btn{
-      width: 60%;
-    }
-    .venstre {
-    margin-top: 20px;
-  }
-  }
-</style>
 
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    @media (max-width: 800px) {
+      .grid_1-1 {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .box {
+        display: none;
+      }
+
+      .mySlides img:nth-child(2) {
+        display: none;
+      }
+
+      .mySlides img {
+        width: 100%;
+      }
+
+      .product-info-mobile {
+        display: block;
+        border: 0;
+        margin: 5px 0 5px 0;
+      }
+      .product-info-mobile select {
+        width: 25%;
+      }
+      .btn {
+        width: 60%;
+      }
+      .venstre {
+        margin-top: 20px;
+      }
+    }
+  </style>
 </Frame>
