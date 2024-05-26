@@ -194,15 +194,15 @@ import Frame from "../layout/frame.astro";
   .karrusel_container {
     position: relative;
     width: 100%;
-    height: 80vh; /* Ændret til 80% af skærmens højde */
+    height: 80vh;
     overflow: hidden;
   }
 
   .karrusel img {
-    width: 100%; /* Bredde af hele karrusel-containeren */
-    height: 100%; /* Højde af hele karrusel-containeren */
-    object-fit: cover; /* Billedet fylder hele området og beskæres om nødvendigt */
-    object-position: center; /* Centrer billedet */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   /* Next & previous buttons */
@@ -215,14 +215,8 @@ import Frame from "../layout/frame.astro";
     margin-top: -22px;
     padding: 16px;
     color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+    font-size: 20px;
   }
-
-  /* Position the "next button" to the right */
   .naeste {
     right: 0;
     border-radius: 3px 0 0 3px;
@@ -273,6 +267,6 @@ import Frame from "../layout/frame.astro";
     // Automatisk skift hvert 5. sekund
     setInterval(function () {
       plusSlides(1);
-    }, 5000); // 5000 millisekunder = 5 sekunder
+    }, 5000);
   });
 </script>
