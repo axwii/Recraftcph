@@ -24,9 +24,9 @@ const { myData } = Astro.props;
 console.log(myData);
 
 const images = [
-  "./img/grillhandsker.webp",
-  "./img/grønmakeuppung.webp",
-  "./img/tehætte.webp",
+  "/img/grillhandsker.webp",
+  "/img/grønmakeuppung.webp",
+  "/img/tehætte.webp",
 ];
 ---
 
@@ -35,9 +35,9 @@ const images = [
     window.plusSlides = function (n) {
       let nextSlideIndex = slideIndex + n;
       const images = [
-        "./img/grillhandsker.webp",
-        "./img/grønmakeuppung.webp",
-        "./img/tehætte.webp",
+        "/img/grillhandsker.webp",
+        "/img/grønmakeuppung.webp",
+        "/img/tehætte.webp",
       ];
 
       if (nextSlideIndex < 0 || nextSlideIndex >= images.length) {
