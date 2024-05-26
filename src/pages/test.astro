@@ -10,7 +10,18 @@ const images = [
 <Frame title="Product title">
   <script>
     window.plusSlides = function (n) {
-      slideIndex += n;
+      let nextSlideIndex = slideIndex + n;
+      const images = [
+        "img/grillhandsker.webp",
+        "img/grønmakeuppung.webp",
+        "img/tehætte.webp",
+      ];
+
+      if (nextSlideIndex < 0 || nextSlideIndex >= images.length) {
+        // If the next slide index is out of range, do nothing and return
+        return;
+      }
+      slideIndex = nextSlideIndex;
       showSlides();
     };
 
