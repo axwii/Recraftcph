@@ -3,8 +3,26 @@ import Frame from "../layout/frame.astro";
 ---
 
 <Frame pageTitle="Recractcph - Hjem">
+  <div class="karrusel_container">
+    <div class="karrusel">
+      <img src="img/1.JPG" style="width:100%" />
+    </div>
+
+    <div class="karrusel">
+      <img src="img/2.JPG" style="width:100%" />
+    </div>
+
+    <div class="karrusel">
+      <img src="img/3.JPG" style="width:100%" />
+    </div>
+
+    <a class="forrige" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="naeste" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br />
+
   <h1>Recraft cph</h1>
-  <h2>En verden i læder</h2>
+  <h2 class="intro">En verden i læder</h2>
   <p class="velkommen">
     Velkommen til Recraft cph, hvor hvert produkt er et skridt mod en mere
     bæredygtig fremtid og en hyldest til den skønhed, vi finder i genanvendelse
@@ -166,5 +184,95 @@ import Frame from "../layout/frame.astro";
       flex-direction: column;
       justify-content: center;
     }
+
+    .intro {
+      margin-top: 10px;
+    }
+  }
+
+  /* Slideshow */
+  .karrusel_container {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Ændret til 80% af skærmens højde */
+    overflow: hidden;
+  }
+
+  .karrusel img {
+    width: 100%; /* Bredde af hele karrusel-containeren */
+    height: 100%; /* Højde af hele karrusel-containeren */
+    object-fit: cover; /* Billedet fylder hele området og beskæres om nødvendigt */
+    object-position: center; /* Centrer billedet */
+  }
+
+  /* Next & previous buttons */
+  .forrige,
+  .naeste {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .naeste {
+    right: 0;
+    border-radius: 3px 0 0 3px;
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides((slideIndex += n));
+    }
+
+    function currentSlide(n) {
+      showSlides((slideIndex = n));
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName(
+        "karrusel"
+      ) as HTMLCollectionOf<HTMLElement>;
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
+
+    let prevButton = document.querySelector(".forrige") as HTMLElement;
+    let nextButton = document.querySelector(".naeste") as HTMLElement;
+
+    prevButton.addEventListener("click", function () {
+      plusSlides(-1);
+    });
+
+    nextButton.addEventListener("click", function () {
+      plusSlides(1);
+    });
+
+    // Automatisk skift hvert 5. sekund
+    setInterval(function () {
+      plusSlides(1);
+    }, 5000); // 5000 millisekunder = 5 sekunder
+  });
+</script>
