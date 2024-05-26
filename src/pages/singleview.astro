@@ -20,26 +20,23 @@ import Frame from "../layout/frame.astro";
       <img src="img3.jpg" style="width:45%" />
       <img src="img3.jpg" style="width:45%" />
     </div>
-
-    <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
   </div>
-  <br />
   <div class="box" style="text-align: center;">
     <h3 class="productname">Lille "Dimse" Pung</h3>
     <h3 class="price">199,00 kr</h3>
     <p>Inklusiv moms</p>
-    <div class="dropdown">
-      <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-      <div id="myDropdown" class="dropdown-content">
-        <a href="#">Blå</a>
-        <a href="#">Grøn</a>
-        <a href="#">Gul</a>
-      </div>
-    </div>
-    <button class="btn">Læg i kurv</button>
+    <div class="custom-select">
+      <select>
+      <option value="">Farve</option>
+      <option value="">Blå</option>
+      <option value="">Orange</option>
+      <option value="">Gul</option>
+      <option value="">Rød</option>
+  </select>
+  <span class="custom-arrow"></span>
+    
   </div>
+  <button class="btn">Læg i kurv</button>
   <div class="grid_1-1">
     <div class="venstre">
       <div class="beskrivelse1"><p>stand in text1</p></div>
@@ -58,7 +55,13 @@ import Frame from "../layout/frame.astro";
     display: flex;
     text-align: center;
   }
-
+.btn{
+  background-color: #616C5B;
+  border: 0;
+  padding: 0.7em 4em;
+  color: white;
+  margin-top: 10px;
+}
   /* Next & previous buttons */
   .prev,
   .next {
@@ -89,6 +92,10 @@ import Frame from "../layout/frame.astro";
   .productname{
     margin top
   }
+  select{
+    padding: 0.8em 2em;
+    border-radius: 30px;
+}
 
   /* Position the "next button" to the right */
   .next {
