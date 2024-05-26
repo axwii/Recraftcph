@@ -7,6 +7,7 @@ const { pageTitle } = Astro.props;
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
+  <link rel="stylesheet" href="../styles/global.css">
   <title>{pageTitle}</title>
 </head>
 <html lang="en">
@@ -38,7 +39,13 @@ const { pageTitle } = Astro.props;
         </div>
       </div>
     </footer>
-    <script src="../db/single.js"></script>
+   <!--  <script src="../db/single.js"></script> -->
   </body>
 </html>
 
+<style>
+  .grid_1-2-2{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+  }
+</style>
