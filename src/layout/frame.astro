@@ -26,6 +26,7 @@ const { pageTitle } = Astro.props;
       <div class="flexbox">
         <div class="flexboximg"><a href="/"><img src="../../public/img/logo.svg" alt="" style="width: 68%;"></a></div>
         <div class="flexboxitems">
+          <div class="flexboximg1"><a href="/"><img src="../../public/img/Frame.svg" alt="" style="width: 68%;"></a></div>
           <div class="col1">
             <h3>Information</h3>
             <li>
@@ -75,7 +76,7 @@ const { pageTitle } = Astro.props;
     <style>
       footer {
         border-top: 1px solid;
-        background-color: #DBD9D9;
+        background-color: #F4F4F4;
       }
       
       .flexbox {
@@ -174,4 +175,49 @@ const { pageTitle } = Astro.props;
       body {
         margin: 0px;
       }
+      .flexboximg1{
+        display: none;
+      }
+      /* Media Query for screens under 800px */
+@media (max-width: 800px) {
+  .flexbox {
+    display: block;
+    text-align: center;
+    position: relative;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  .col3 input[type="text"], .col3 input[type="submit"] {
+    width: 87%;
+  }
+  .flexboximg {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .flexboximg img {   
+    margin-left: 0;
+  }
+
+  .flexboxitems {
+    width: 100%;
+    margin: 0;
+  }
+  .flexbox ul{
+    text-align: left;
+  }
+  .flexboximg{
+    display: none;
+  }
+  .flexboximg1{
+    display: block;
+    position: absolute;
+    
+    width: 12%;
+    border-radius: 50%;
+    top: 30%;
+    left: 43.95%;
+  }
+
+}
       </style>      
