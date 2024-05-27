@@ -13,40 +13,129 @@ const { pageTitle } = Astro.props;
 <html lang="en">
   <body>
     <header>
-      <nav><a href="/">home</a><a href="/listeview">listeview</a><a href="/test">test page</a></nav>
+      <nav>
+        <a href="/">home</a><a href="/listeview">listeview</a><a href="/test"
+          >test page</a
+        >
+      </nav>
     </header>
     <main>
       <slot />
     </main>
     <footer>
-      <div class="grid_1-2-2">
-        <!-- <img src="/images/logo.png" alt="logo" /> -->
-        <div class="contact">
-          
-          <h3>kontakt os</h3>
-          <p>info@recraftcph.dk</p>
-          <h3>Find os</h3>
-          <p>Vejnavn 193, 1432 Copenhagen</p>
-        </div>
-        <div class="pages">
-          <a href="/index"><h3>Forside</h3></a>
-          <a href="/about"><h3>Om os</h3></a>
+      <div class="flexbox">
+        <div class="flexboximg"><a href="/"><img src="../../public/img/logo.svg" alt="" style="width: 68%;"></a></div>
+        <div class="flexboxitems">
+          <div class="col1">
+            <h3>Information</h3>
+            <li>
+              <ul><a href="">Kontakt</a></ul>
+              <ul><a href="">Om Recraft CPH</a></ul>
+              <ul><a href="">Alle produkter</a></ul>
+              <ul><a href="">Rengøring</a></ul>
+            </li>
+          </div>
+          <div class="col2">
+            <h3>RecraftCPH</h3>
+            <li>
+              <ul>Tlf. 26251870</ul>
+              <ul>Email:</ul>
+              <ul>recraftcph@gmail.com</ul>
+            </li>
+          </div>
+          <div class="col3">
+            <h3>Nyhedsbrev</h3><form action="/action_page.php">
+              <input
+                type="text"
+                placeholder="E-mailadresse"
+                id="subdomain"
+              /><br /><br />
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
+          <div class="col4">
+            <h3>Forhandler</h3>
+            <li>
+              <ul>Kunst og Køkkentøj.</ul>
+              <ul>Bernikow gården</ul>
+              <ul>Østergade 26, 1100</ul>
+              <ul>Kbh.</ul>
+            </li>
+          </div>
         </div>
       </div>
       <div class="SoMe">
-        <div class="icons">
-          <!-- <img id="insta" src="/images/instagram.png" alt="instagram" />
-          <img id="facebook" src="images/Vector.png" alt="facebook" /> -->
-        </div>
+        <a href=""><img src="../../public/img/Insta.svg" alt=""></a>
+        <a href=""><img src="../../public/img/Facebook.svg" alt=""></a>
       </div>
     </footer>
-   <!--  <script src="../db/single.js"></script> -->
-  </body>
-</html>
+    <!--  <script src="../db/single.js"></script> -->
+    </body>
+    </html>
+    
+    <style>
+    footer {
+      border-top: 1px solid;
+      background-color: #DBD9D9;
+    }
+    
+    .flexbox {
+      display: flex;
+      margin-top: 15px;
+    }
+    .flexbox ul, h3{
+      margin: auto;
+    }
+    .flexbox li, a{
+      list-style: none;
+      color: black;
+    }
+    
+    .flexboximg {
+      width: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .flexboxitems {
+      width: 75%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .flexboxitems ul {
+      margin: 1px;
+    }
+    
+    .col1, .col2, .col3, .col4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .col1 {
+      border-bottom: 1px solid;
+      border-right: 1px solid;
+    }
+    
+    .col2 {
+      border-bottom: 1px solid;
+    }
+    
+    .col3 {
+      border-right: 1px solid;
+    }
+    .SoMe{
+      display: flex;
+      justify-content: end;
+    }
+    .SoMe img{
+      width: 50%;
+      margin: 15px 30px 0 0 ;
+    }
 
-<style>
-  .grid_1-2-2{
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr;
-  }
-</style>
+    body{
+      margin: 0px;
+    }
+
+    </style>
