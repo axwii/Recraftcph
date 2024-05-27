@@ -19,7 +19,6 @@ import Frame from "../layout/frame.astro";
     <a class="forrige" onclick="plusSlides(-1)">&#10094;</a>
     <a class="naeste" onclick="plusSlides(1)">&#10095;</a>
   </div>
-  <br />
 
   <h1>Recraft cph</h1>
   <h2 class="intro">En verden i læder</h2>
@@ -113,11 +112,6 @@ import Frame from "../layout/frame.astro";
     margin-bottom: 50px;
     max-width: 600px;
     margin: 0 auto;
-    text-align: justify;
-  }
-
-  .velkommen {
-    text-align: center;
   }
 
   .mille_container {
@@ -155,6 +149,39 @@ import Frame from "../layout/frame.astro";
     margin-top: 20px;
   }
 
+  /* Karrusel */
+  .karrusel_container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+  }
+
+  .karrusel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* næste og forrige knap */
+  .forrige,
+  .naeste {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-size: 20px;
+  }
+
+  .naeste {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
   /* Desktop styling */
   @media (min-width: 800px) {
     .mille_container {
@@ -190,36 +217,15 @@ import Frame from "../layout/frame.astro";
     }
   }
 
-  /* Slideshow */
+  /* Karrusel */
   .karrusel_container {
-    position: relative;
-    width: 100%;
-    height: 80vh;
-    overflow: hidden;
+    height: 60vh;
   }
 
-  .karrusel img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  /* Next & previous buttons */
   .forrige,
   .naeste {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-size: 20px;
-  }
-  .naeste {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+    font-size: 24px;
+    padding: 20px;
   }
 </style>
 
@@ -264,9 +270,9 @@ import Frame from "../layout/frame.astro";
       plusSlides(1);
     });
 
-    // Automatisk skift hvert 5. sekund
+    // Automatisk skift hvert 3. sekund
     setInterval(function () {
       plusSlides(1);
-    }, 5000);
+    }, 3000);
   });
 </script>
