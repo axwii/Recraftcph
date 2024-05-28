@@ -37,7 +37,7 @@ const images = myData.ProductImages.map(imageObject => "/products/img/" + imageO
 <Frame title="Product title">
   <script>
     // Liste over billeder til slideshowet
-    const images = JSON.parse('{JSON.stringify(images)}');
+    const images = JSON.parse(document.currentScript.getAttribute('images'));
 
     // Funktion til at skifte til næste/forrige slide
     window.plusSlides = function (n) {
@@ -136,9 +136,11 @@ function showSlides() {
 
 <div class="grid_1-1">
   <div class="venstre">
-    <div class="beskrivelse1"><p>stand in text1</p></div>
-    <div class="beskrivelse2"><p>stand in text2</p></div>
-    <div class="beskrivelse3"><p>stand in text3</p></div>
+    {myData.description.map((desc) => (
+      <div>
+        <p>{desc}</p>
+      </div>
+    ))}
   </div>
   <div class="højre">
     <h4>You might also like</h4>
@@ -216,16 +218,14 @@ function showSlides() {
     align-self: start;
   }
 
-  .beskrivelse1,
-  .beskrivelse2,
-  .beskrivelse3 {
-    border-top: 1.5px solid;
-    padding: 20px;
-  }
+  .venstre > div {
+  border-top: 1.5px solid;
+  padding: 20px;
+}
 
-  .beskrivelse3 {
-    border-bottom: 1.5px solid;
-  }
+.venstre > div:last-child {
+  border-bottom: 1.5px solid;
+}
 
   .venstre {
     margin-top: 80px;
