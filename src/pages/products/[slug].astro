@@ -6,7 +6,7 @@ import Frame from "../../layout/frame.astro";
 export async function getStaticPaths() {
   // Henter data fra en ekstern API
   const data = await fetch(
-    "https://hkltapzneruelglyxqhl.supabase.co/rest/v1/Recraftcph?select=*",
+    "https://hkltapzneruelglyxqhl.supabase.co/rest/v1/Recraftcph?select=*,ProductImages(img_path)",
     {
       method: "GET",
       headers: {
@@ -30,42 +30,35 @@ const { myData } = Astro.props;
 console.log(myData);
 
 // Definerer en liste over billeder
-const images = [
-  "/img/grillhandsker.webp",
-  "/img/grønmakeuppung.webp",
-  "/img/tehætte.webp",
-];
+const images = myData.ProductImages.map(imageObject => "/products/img/" + imageObject.img_path);
+
 ---
 
 <Frame title="Product title">
   <script>
-// Funktion til at skifte til næste/forrige slide
-window.plusSlides = function (n) {
-  // Beregn den næste slide-indeks baseret på den aktuelle slideIndex og værdien af n
-  let nextSlideIndex = slideIndex + n;
+    // Liste over billeder til slideshowet
+    const images = JSON.parse('{JSON.stringify(images)}');
 
-  // Liste over billeder til slideshowet
-  const images = [
-    "/img/grillhandsker.webp",
-    "/img/grønmakeuppung.webp",
-    "/img/tehætte.webp",
-  ];
+    // Funktion til at skifte til næste/forrige slide
+    window.plusSlides = function (n) {
+      // Beregn den næste slide-indeks baseret på den aktuelle slideIndex og værdien af n
+      let nextSlideIndex = slideIndex + n;
 
-  // Tjekker om den næste slide-indeks er uden for rækkevidde
-  if (nextSlideIndex < 0 || nextSlideIndex >= images.length) {
-    // Hvis den næste slide indeks er uden for rækkevidde, gør ingenting og returner
-    return;
-  }
+      // Tjekker om den næste slide-indeks er uden for rækkevidde
+      if (nextSlideIndex < 0 || nextSlideIndex >= images.length) {
+        // Hvis den næste slide indeks er uden for rækkevidde, gør ingenting og returner
+        return;
+      }
 
-  // Opdater slideIndex til den nye værdi
-  slideIndex = nextSlideIndex;
-  
-  // Vis de relevante slides
-  showSlides();
-};
+      // Opdater slideIndex til den nye værdi
+      slideIndex = nextSlideIndex;
 
-// Initialiserer slideIndex til 0, så den første slide vises som standard
-let slideIndex = 0;
+      // Vis de relevante slides
+      showSlides();
+    };
+
+    // Initialiserer slideIndex til 0, så den første slide vises som standard
+    let slideIndex = 0;
 
 // Funktion til at vise slides
 function showSlides() {
@@ -83,23 +76,22 @@ function showSlides() {
   // Gør den næste slide synlig (loop tilbage til start hvis det er den sidste slide)
   (slides[(slideIndex + 1) % slides.length] as HTMLElement).style.display = "block";
 }
+
+    // Initial visning af slides
+    window.onload = showSlides;
   </script>
+
   <!-- Parent container for positioning -->
   <div class="slideshow-and-product-container">
     <!-- Slideshow container -->
     <div class="slideshow-container">
       <!-- Full-width images with number and caption text -->
       <div class="slides-wrapper" style="display: flex;">
-        {
-          images.map((image, index) => (
-            <div
-              class="mySlides fade"
-              style={`display: ${index < 2 ? "block" : "none"}`}
-            >
-              <img src={image} class="slide-img" />
-            </div>
-          ))
-        }
+        {images.map((image, index) => (
+          <div class="mySlides fade" style={`display: ${index < 2 ? "block" : "none"}`}>
+            <img src={image} class="slide-img" />
+          </div>
+        ))}
       </div>
 
       <!-- Next and previous buttons -->
