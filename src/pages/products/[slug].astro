@@ -1,8 +1,8 @@
 ---
-// @ts-nocheck
+//@ts-nocheck
 import Frame from "../../layout/frame.astro";
 export async function getStaticPaths() {
-  const data = await fetch(
+  const products = await fetch(
     "https://hkltapzneruelglyxqhl.supabase.co/rest/v1/Recraftcph?select=*",
     {
       method: "GET",
@@ -13,33 +13,64 @@ export async function getStaticPaths() {
     }
   ).then((response) => response.json());
 
-  return data.map((product) => {
-    return {
+  const paths = [];
+  for (const product of products) {
+    const images = await fetch(
+      `https://hkltapzneruelglyxqhl.supabase.co/rest/v1/Recraftcph?select=*,ProductImages(product_id)`,
+      {
+        method: "GET",
+        headers: {
+          apikey:
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhrbHRhcHpuZXJ1ZWxnbHl4cWhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1OTMyOTksImV4cCI6MjAzMTE2OTI5OX0.FQkPXh4GnFu6SnWkHdluQYFqHcG2cY2eE5Q8AnBtOlw",
+        },
+      }
+    ).then((response) => response.json());
+    // console.log(images);
+    //console.log(`https://hkltapzneruelglyxqhl.supabase.co/rest/v1/Recraftcph?select=*,ProductImages(product_id)`)
+    paths.push({
       params: { slug: product.slug },
-      props: { myData: product },
-    };
-  });
+      props: { myData: product, imageTest: images },
+    });
+  }
+
+  return paths;
 }
 const { myData } = Astro.props;
-console.log(myData);
+// console.log(myData);
 
-const images = [
-  "/img/grillhandsker.webp",
-  "/img/grønmakeuppung.webp",
-  "/img/tehætte.webp",
-];
+let images = [];
+if (myData && myData.ProductImages) {
+  images = myData.ProductImages.map(imageObject => imageObject.img_path);
+}
+console.log("Welcome to");
+console.log(myData.ProductImages);
+console.log("Send God");
+if (myData.ProductImages && Array.isArray(myData.ProductImages)) {
+  console.log(myData.ProductImages[0]);
+}
+console.log("myData");
+// console.log(myData);
+console.log("myData.ProductImages");
+console.log(myData.ProductImages);
+console.log("just before img");
+console.log(images);
+console.log("just after img");
+
+// const images = [
+//   "/img/grillhandsker.webp",
+//   "/img/grønmakeuppung.webp",
+//   "/img/tehætte.webp",
+// ];
 ---
 
 <Frame title="Product title">
   <script>
     window.plusSlides = function (n) {
       let nextSlideIndex = slideIndex + n;
-      const images = [
-        "/img/grillhandsker.webp",
-        "/img/grønmakeuppung.webp",
-        "/img/tehætte.webp",
-      ];
-
+      console.log("do you do the working?");
+      const images = JSON.stringify(myData.ProductImages.map(imageObject => imageObject.img_path));
+      console.log("nooooooooo pls work");
+      console.log(images);
       if (nextSlideIndex < 0 || nextSlideIndex >= images.length) {
         // If the next slide index is out of range, do nothing and return
         return;
@@ -101,34 +132,34 @@ const images = [
     <button class="btn">Læg i kurv</button>
   </div>
 
-<div class="product-info-mobile">
-  <h3 class="productname">{myData.name}</h3>
-  <h3 class="price">{myData.price} kr</h3>
-  <p>Inklusiv moms</p>
-  <div class="custom-select">
-    <select>
-      <option value="">Farve</option>
-      <option value="">Blå</option>
-      <option value="">Orange</option>
-      <option value="">Gul</option>
-      <option value="">Rød</option>
-    </select>
-    <span class="custom-arrow"></span>
+  <div class="product-info-mobile">
+    <h3 class="productname">{myData.name}</h3>
+    <h3 class="price">{myData.price} kr</h3>
+    <p>Inklusiv moms</p>
+    <div class="custom-select">
+      <select>
+        <option value="">Farve</option>
+        <option value="">Blå</option>
+        <option value="">Orange</option>
+        <option value="">Gul</option>
+        <option value="">Rød</option>
+      </select>
+      <span class="custom-arrow"></span>
+    </div>
+    <button class="btn">Læg i kurv</button>
   </div>
-  <button class="btn">Læg i kurv</button>
-</div>
 
-<div class="grid_1-1">
-  <div class="venstre">
-    <div class="beskrivelse1"><p>stand in text1</p></div>
-    <div class="beskrivelse2"><p>stand in text2</p></div>
-    <div class="beskrivelse3"><p>stand in text3</p></div>
+  <div class="grid_1-1">
+    <div class="venstre">
+      <div class="beskrivelse1"><p>stand in text1</p></div>
+      <div class="beskrivelse2"><p>stand in text2</p></div>
+      <div class="beskrivelse3"><p>stand in text3</p></div>
+    </div>
+    <div class="højre">
+      <h3>You might also like</h3>
+      <img src="/img/tehætte.webp" alt="hætte" style="width:65%" />
+    </div>
   </div>
-  <div class="højre">
-    <h3>You might also like</h3>
-    <img src="../../public/img/tehætte.webp" alt="hætte" style="width:65%" />
-  </div>
-</div>
 </Frame>
 
 <style>
