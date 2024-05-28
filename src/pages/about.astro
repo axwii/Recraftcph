@@ -1,29 +1,8 @@
-
-<body>
+---
+import Frame from "../layout/frame.astro";
+---
+<Frame title="Product title">
     <nav>
-      <div class="navtop">
-          <div class="left">
-              <img src="/public/facebook.png" alt="">
-              <img src="/public/instagram.png" alt="">
-          </div>
-          <div class="logoholder">
-              <h1 class="logo">RECRAFT</h1>
-              <h1 class="logo1">CPH</h1>
-          </div>
-          
-          <div class="right">
-              <img src="/public/search.png" alt="">
-              <img src="/public/shopping-cart.png" alt="">
-          </div>
-         </div>
-         <ul>
-          <li><a href="index.astro">Home</a></li>
-          <li><a href="about.astro">About</a></li>
-          <li><a href="listeview.astro">Products</a></li>
-          <li><a href="singleview.astro">Contact</a></li>
-         </ul>
-    </nav>
-      
   
       <section id="top_grid">
           <div>
@@ -40,74 +19,11 @@
               Læderet, som er 100% ægte, er overskud fra møbelproduktion.Der skæres store mængder læder fra, når der produceres møbler, som normalt ender til forbrænding.Recraft cph opkøber dette restlæder og overskudslæder fra en møbelproducent og upcycler det helt ubrugte læder til nye og lækre produkter.</p>
               <button class="Kontakt">Kontakt</button>
       </section>
-      
-      
-  </body>
+</Frame>
   <style>
       *{
           padding: 0;
-          margin: 0;
-      }
-      nav{
-          padding-top: 20px;
-          
-      }
-      .navtop{
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          border-bottom: 2px black solid;
-          padding-bottom:20px ;
-          
-      }
-      ul{
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-          list-style: none;
-          justify-items: center;
-          width: 50%;
-          margin-left: 25%;
-          padding-top: 20px;
-         
-      }
-      a{
-          text-decoration: none;
-          color: black;
-          font-size: 24px;
-      }
-      a:hover{
-          color:#CCAB8F ;
-      }
-      .left{
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          margin-left: 5%;
-          gap: 1rem;
-      }
-      .right{
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          margin-right: 5%;
-          gap: 1rem;
-      }
-      .logo{
-          font-size: 30px;
-         
-          
-      }
-      .logo1{
-          font-size: 30px;
-          margin-left: 42px;
-          
-          
-      }
-      .logoholder{
-          display: grid;
-          grid-template-rows: 1fr 1fr;
-          margin: 0;
-          padding: 0;
-          align-items: baseline;
-      }
+          margin: 0;}
       #top_grid{
           display: flex;
           flex-direction: column;
