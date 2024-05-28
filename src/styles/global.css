@@ -6,9 +6,13 @@
   font-family: "Abhaya-regular";
   src: url(../../public/font/AbhayaLibre-Regular.ttf);
 }
-@font-face {
+/* @font-face {
   font-family: "Abhaya-bold";
   src: url(../../public/font/AbhayaLibre-Bold.ttf);
+} */
+@font-face {
+  font-family: "Abhaya-bold";
+  src: url(font/AbhayaLibre-Bold.ttf);
 }
 
 :root {
