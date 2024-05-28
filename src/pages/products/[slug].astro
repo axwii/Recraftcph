@@ -39,33 +39,50 @@ const images = [
 
 <Frame title="Product title">
   <script>
-    window.plusSlides = function (n) {
-      let nextSlideIndex = slideIndex + n;
-      const images = [
-        "/img/grillhandsker.webp",
-        "/img/grønmakeuppung.webp",
-        "/img/tehætte.webp",
-      ];
+// Funktion til at skifte til næste/forrige slide
+window.plusSlides = function (n) {
+  // Beregn den næste slide-indeks baseret på den aktuelle slideIndex og værdien af n
+  let nextSlideIndex = slideIndex + n;
 
-      if (nextSlideIndex < 0 || nextSlideIndex >= images.length) {
-        // If the next slide index is out of range, do nothing and return
-        return;
-      }
-      slideIndex = nextSlideIndex;
-      showSlides();
-    };
+  // Liste over billeder til slideshowet
+  const images = [
+    "/img/grillhandsker.webp",
+    "/img/grønmakeuppung.webp",
+    "/img/tehætte.webp",
+  ];
 
-    let slideIndex = 0;
+  // Tjekker om den næste slide-indeks er uden for rækkevidde
+  if (nextSlideIndex < 0 || nextSlideIndex >= images.length) {
+    // Hvis den næste slide indeks er uden for rækkevidde, gør ingenting og returner
+    return;
+  }
 
-    function showSlides() {
-      const slides = document.getElementsByClassName("mySlides");
-      for (let i = 0; i < slides.length; i++) {
-        (slides[i] as HTMLElement).style.display = "none";
-      }
-      (slides[slideIndex] as HTMLElement).style.display = "block";
-      (slides[(slideIndex + 1) % slides.length] as HTMLElement).style.display =
-        "block";
-    }
+  // Opdater slideIndex til den nye værdi
+  slideIndex = nextSlideIndex;
+  
+  // Vis de relevante slides
+  showSlides();
+};
+
+// Initialiserer slideIndex til 0, så den første slide vises som standard
+let slideIndex = 0;
+
+// Funktion til at vise slides
+function showSlides() {
+  // Hent alle elementer med klassen "mySlides"
+  const slides = document.getElementsByClassName("mySlides");
+  
+  // Gør alle slides usynlige
+  for (let i = 0; i < slides.length; i++) {
+    (slides[i] as HTMLElement).style.display = "none";
+  }
+  
+  // Gør den aktuelle slide synlig
+  (slides[slideIndex] as HTMLElement).style.display = "block";
+  
+  // Gør den næste slide synlig (loop tilbage til start hvis det er den sidste slide)
+  (slides[(slideIndex + 1) % slides.length] as HTMLElement).style.display = "block";
+}
   </script>
   <!-- Parent container for positioning -->
   <div class="slideshow-and-product-container">
