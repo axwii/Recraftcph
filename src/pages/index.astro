@@ -4,23 +4,22 @@ import Frame from "../layout/frame.astro";
 
 <Frame pageTitle="Recractcph - Hjem">
   <div class="karrusel_container">
-    <div class="karrusel">
-      <img src="img/1.JPG" style="width:100%" />
+    <h1>Recraft CPH</h1>
+    <div class="karrusel_inner">
+      <div class="karrusel">
+        <img src="img/1.JPG" style="width:100%" />
+      </div>
+      <div class="karrusel">
+        <img src="img/2.JPG" style="width:100%" />
+      </div>
+      <div class="karrusel">
+        <img src="img/3.JPG" style="width:100%" />
+      </div>
     </div>
-
-    <div class="karrusel">
-      <img src="img/2.JPG" style="width:100%" />
-    </div>
-
-    <div class="karrusel">
-      <img src="img/3.JPG" style="width:100%" />
-    </div>
-
     <a class="forrige" onclick="plusSlides(-1)">&#10094;</a>
     <a class="naeste" onclick="plusSlides(1)">&#10095;</a>
   </div>
 
-  <h1>Recraft cph</h1>
   <h4 class="intro">En verden i læder</h4>
   <p class="velkommen">
     Velkommen til Recraft cph, hvor hvert produkt er et skridt mod en mere
@@ -100,16 +99,26 @@ import Frame from "../layout/frame.astro";
   }
 
   h1 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
     text-align: center;
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 1;
   }
   h2 {
     text-align: center;
     margin-top: 50px;
   }
-  h4{
+  h4 {
     text-align: center;
   }
-  .velkommen{
+  .velkommen {
     max-width: 500px;
   }
 
@@ -158,33 +167,45 @@ import Frame from "../layout/frame.astro";
   .karrusel_container {
     position: relative;
     width: 100%;
-    height: 60vh;
+    height: 100vh;
     overflow: hidden;
+    margin-top: 50px;
+  }
+
+  .karrusel {
+    display: flex;
+    transition: transform 0.5s ease;
   }
 
   .karrusel img {
-    width: 100%;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
-    object-position: center;
   }
 
-  /* næste og forrige knap */
+  /* Næste og forrige knap */
+
   .forrige,
   .naeste {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 18%;
+    transform: translateY(-300%);
     width: auto;
-    margin-top: -22px;
     padding: 16px;
     color: white;
     font-size: 20px;
+    border: none;
+    z-index: 1;
+  }
+
+  .forrige {
+    left: 0;
+    border-radius: 3px 0 0 3px;
   }
 
   .naeste {
     right: 0;
-    border-radius: 3px 0 0 3px;
+    border-radius: 0 3px 3px 0;
   }
 
   /* Desktop styling */
@@ -218,19 +239,27 @@ import Frame from "../layout/frame.astro";
     }
 
     .intro {
-      margin-top: 10px;
+      margin-top: 50px;
     }
   }
 
   /* Karrusel */
   .karrusel_container {
-    height: 60vh;
+    height: 100vh; /* Justeret højde for større skærme */
   }
 
   .forrige,
   .naeste {
     font-size: 24px;
-    padding: 20px;
+    top: calc(50% - 40px);
+  }
+
+  .forrige {
+    left: 10px;
+  }
+
+  .naeste {
+    right: 10px;
   }
 </style>
 
