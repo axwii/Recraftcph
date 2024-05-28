@@ -3,27 +3,27 @@ import Frame from "../layout/frame.astro";
 ---
 
 <Frame title="Product title">
-  <nav>
-    <section id="top_grid">
-      <div>
-        <h1 class="hvem">Hvem er RecraftCph</h1>
-        <p class="text">
-          Selvfølgelig! Recraft Cph er en innovativ dansk virksomhed, der bærer
-          bæredygtighedens fane højt inden for modeverdenen. Med en dedikation
-          til genbrug og genanvendelse af materialer har de specialiseret sig i
-          at skabe stilfulde accessories og tøj med en unik og miljøvenlig
-          tilgang. Deres produkter er ikke kun æstetisk tiltalende, men også et
-          skridt i retning af en mere ansvarlig modeindustri, hvor spild
-          reduceres, og ressourcer udnyttes optimalt. Recraft Cph's vision om at
-          fusionere stil med bæredygtighed gør dem til en frontløber i kampen
-          for en grønnere fremtid inden for mode.
-        </p>
-      </div>
-      <img class="videoholder" src="/public/video-placeholder.jpg" alt="" />
-    </section>
-    <section id="bot_grid">
-      <h1 class="mover">Mød Mille</h1>
-      <img class="profil" src="/public/milleprofil.webp" alt="" />
+  <div id="top_grid">
+    <div>
+      <h2 class="hvem">Hvem er RecraftCph</h2>
+      <p class="text">
+        Recraft Cph er en innovativ dansk virksomhed, der bærer bæredygtighedens
+        fane højt inden for modeverdenen. Med en dedikation til genbrug og
+        genanvendelse af materialer har de specialiseret sig i at skabe
+        stilfulde accessories og tøj med en unik og miljøvenlig tilgang. Deres
+        produkter er ikke kun æstetisk tiltalende, men også et skridt i retning
+        af en mere ansvarlig modeindustri, hvor spild reduceres, og ressourcer
+        udnyttes optimalt. Recraft Cph's vision om at fusionere stil med
+        bæredygtighed gør dem til en frontløber i kampen for en grønnere fremtid
+        inden for mode.
+      </p>
+    </div>
+    <img class="videoholder" src="/public/video-placeholder.jpg" alt="" />
+  </div>
+  <div id="top_grid">
+    <img class="profil" src="/public/img/milleabout.webp" alt="" />
+    <div class="moed">
+      <h2 class="mover">Mød Mille</h2>
       <p class="text1">
         Hejsa, Mit navn er Mille Marie og det er mig som er designeren og
         syersken bag mit brand: Recraft cph.Jeg går ind for bæredygtighed og
@@ -34,117 +34,62 @@ import Frame from "../layout/frame.astro";
         dette restlæder og overskudslæder fra en møbelproducent og upcycler det
         helt ubrugte læder til nye og lækre produkter.
       </p>
-      <button class="Kontakt">Kontakt</button>
-    </section>
-  </nav>
+      <button class="btn">Kontakt</button>
+    </div>
+  </div>
+
   <style>
-    * {
-      padding: 0;
-      margin: 0;
-    }
     #top_grid {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .text {
-      font-size: 32px;
-      margin: 75px;
-    }
-    .text1 {
-      font-size: 32px;
-      margin: 75px;
-    }
-    .hvem {
-      font-size: 110px;
-      text-align: center;
-    }
-    .mover {
-      font-size: 110px;
-      text-align: center;
-    }
-    #bot_grid {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 40px;
+      margin-top: 20px;
     }
     .profil {
-      width: 70%;
+      margin: auto;
     }
-    .videoholder {
-      width: 100%;
+    .moed {
+      margin-left: 30px;
+      margin-top: 20px;
+      margin: auto;
     }
-    .Kontakt {
-      background-color: #616c5b;
-      color: white;
+    .text1,
+    .text {
+      max-width: 65ch;
+      margin: auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .text {
+      margin: auto;
+      margin-top: 10px;
+    }
+    .btn {
+      margin: auto;
+    }
+    .mover {
+      margin-left: -4px;
+    }
+    .hvem {
       text-align: center;
-      text-decoration: none;
-      font-size: 16px;
-      padding: 10px 10px;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-      display: block;
-      max-width: 150px;
-      margin: 20px auto;
+      margin-left: -7px;
     }
-    @media only screen and (min-width: 992px) {
+    @media (max-width: 800px) {
       #top_grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-      #bot_grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        padding-top: 100px;
-      }
-      .videoholder {
-        margin-top: 15%;
-      }
-      .text {
-        font-size: 25px;
-        margin: 75px;
-      }
-      .hvem {
-        font-size: 66px;
-        text-align: center;
-        margin-top: 20%;
-      }
-      .mover {
-        font-size: 50px;
-        text-align: start;
-        margin-top: 0%;
-        grid-area: 1 / 2 / 2 / 3;
-        margin-bottom: 25%;
+        display: block;
       }
       .profil {
-        grid-area: 1 / 1 / 3 / 2;
-        width: 50%;
-        margin-left: 20%;
-        margin-bottom: 30%;
+        display: block;
+        margin: 20px auto;
       }
-      .text1 {
-        font-size: 27px;
-        margin: 0px;
-        grid-area: 1 / 2 / 2 / 3;
-        margin-top: 0%;
-        width: 95%;
-        padding-top: 25%;
+      .moed {
+        margin: auto;
       }
-      .Kontakt {
-        grid-area: 2 / 2 / 3 / 3;
-        background-color: #616c5b;
-        color: white;
-        font-size: 21px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 0px;
-        padding-right: 0px;
-        width: 25%;
-        margin-bottom: 40%;
+      .mover,
+      .btn {
+        display: block;
+        margin: 10px auto;
+        text-align: center
       }
     }
   </style>

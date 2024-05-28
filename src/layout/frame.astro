@@ -95,10 +95,215 @@ const { pageTitle } = Astro.props;
       </div>
     </footer>
     <!--  <script src="../db/single.js"></script> -->
-  </body>
-</html>
-<style>
-  header {
+    </body>
+    </html>
+    <style>
+
+header {
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: white;
+      z-index: 1000; /* Ensure the header stays above other content */
+    }
+
+    main {
+      padding-top: 46px; /* Adjust this value based on the actual header height */
+    }
+      nav{
+          padding-top: 20px;
+          
+      }
+      .navtop{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1.3px black solid;
+          padding-bottom:20px ;
+          
+      }
+      .navul{
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          list-style: none;
+          justify-items: center;
+          width: 50%;
+          margin: -10px 0px -35px 25%;
+          padding-top: 20px;
+         
+      }
+      nav a{
+        text-decoration: none;
+      }
+      .nava{
+        font-family: LibreCaslon;
+          color: black;
+          font-size: 24px;
+      }
+      a:hover{
+          color:#CCAB8F ;
+      }
+      .logoholder a:hover{
+        color: black
+            }
+      .left{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          margin-left: 5%;
+          gap: 1rem;
+      }
+      .right{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          margin-right: 5%;
+          gap: 1rem;
+      }
+      .logo{
+          font-size: 30px;
+      }
+      .logo1{
+          font-size: 30px;
+          margin-left: 42px;
+          
+          
+      }
+      .logoholder{
+          display: grid;
+          grid-template-rows: 1fr 1fr;
+          margin: 0;
+          padding: 0;
+          align-items: baseline;
+      }
+
+      footer {
+        border-top: 1px solid;
+        background-color: #F4F4F4;
+        margin-top: 50px;
+      }
+      .bold{
+        font-weight: bold;
+      }
+      
+      .flexbox {
+        display: flex;
+        margin-top: 40px;
+      }
+      
+      .flexbox ul, .bold, form {
+        margin: auto;
+      }
+      
+      .flexbox li, a {
+        list-style: none;
+        color: black;
+      }
+      
+      .flexboximg {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .flexboximg img {
+        margin-left: 30px;
+      }
+      
+      .flexboxitems {
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-right: 20px;
+      }
+      
+      .flexboxitems ul {
+        margin: 1px;
+        font-size: 0.875em;
+      }
+      
+      .col1, .col2, .col3, .col4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .col1 {
+        border-bottom: 1px solid;
+        border-right: 1px solid;
+        li {
+          margin-bottom: 10px;
+        }
+      }
+      
+      .col2 {
+        border-bottom: 1px solid;
+        li {
+          margin: 10px 0px;
+        }
+      }
+      
+      .col3 {
+        border-right: 1px solid;
+        form {
+          margin-top: 20px;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      .flexbox li{
+        margin-left: 23px;
+      }
+      .col4 {
+        margin-top: 20px;
+      }
+      
+      .col3 input[type="text"], .col3 input[type="submit"] {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        border: 0px;
+        margin-left: -20px;
+      }
+      
+      .col3 input[type="submit"] {
+        margin-top: -42px;
+        background-color: #616C5B;
+        color: #DBD9D9
+      }
+      
+      .SoMe {
+        display: flex;
+        justify-content: end;
+      }
+      
+      .SoMe img {
+        width: 50%;
+        margin: 15px 30px 0 0;
+      }
+      
+      body {
+        margin: 0px;
+      }
+      .flexboximg1{
+        display: none;
+      }
+      /* Media Query for screens under 800px */
+@media (max-width: 800px) {
+  .nava{
+    margin: 0px 10px 0px 10px;
+  }
+  
+  .flexbox {
+    display: block;
+    text-align: center;
+    position: relative;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  .col3 input[type="text"], .col3 input[type="submit"] {
+    width: 82%;
+    margin-left: 10px;
+  }
+  .flexboximg {
     width: 100%;
     top: 0;
     left: 0;
