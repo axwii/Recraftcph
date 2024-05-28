@@ -16,24 +16,25 @@ const { pageTitle } = Astro.props;
       <nav>
         <div class="navtop">
             <div class="left">
-                <img src="/public/facebook.png" alt="">
-                <img src="/public/instagram.png" alt="">
+                <img src="/public/img/navface.svg" alt="">
+                <img src="/public/img/navinsta.svg" alt="">
             </div>
             <div class="logoholder">
-                <h1 class="logo">RECRAFT</h1>
-                <h1 class="logo1">CPH</h1>
+                <a href="/"><h1 class="logo">RECRAFT</h1></a>
+                <a href="/"> <h1 class="logo1">CPH</h1></a>
+              
             </div>
             
             <div class="right">
-                <img src="/public/search.png" alt="">
-                <img src="/public/shopping-cart.png" alt="">
+                <img src="/public/img/Search.svg" alt="">
+                <img src="/public/img/Kurv.svg" alt="">
             </div>
            </div>
-           <ul>
-            <li><a href="/index">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/listeview">Products</a></li>
-            <li><a href="/singleview">Contact</a></li>
+           <ul class="navul">
+            <a class="nava" href="/">Home</a>
+            <a class="nava" href="/about">About</a>
+            <a class="nava" href="/listeview">Products</a>
+            <a class="nava" href="/">Contact</a>
            </ul>
       </nav>
     </header>
@@ -92,7 +93,6 @@ const { pageTitle } = Astro.props;
     </body>
     </html>
     <style>
-            }
       nav{
           padding-top: 20px;
           
@@ -105,24 +105,30 @@ const { pageTitle } = Astro.props;
           padding-bottom:20px ;
           
       }
-      ul{
+      .navul{
           display: grid;
           grid-template-columns: 1fr 1fr 1fr 1fr;
           list-style: none;
           justify-items: center;
           width: 50%;
-          margin-left: 25%;
+          margin: 5px 0px -25px 25%;
           padding-top: 20px;
          
       }
-      a{
-          text-decoration: none;
+      nav a{
+        text-decoration: none;
+      }
+      .nava{
+        
           color: black;
           font-size: 24px;
       }
       a:hover{
           color:#CCAB8F ;
       }
+      .logoholder a:hover{
+        color: black
+            }
       .left{
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -137,8 +143,6 @@ const { pageTitle } = Astro.props;
       }
       .logo{
           font-size: 30px;
-         
-          
       }
       .logo1{
           font-size: 30px;
