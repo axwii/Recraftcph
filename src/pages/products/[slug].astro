@@ -1,7 +1,10 @@
 ---
 // @ts-nocheck
 import Frame from "../../layout/frame.astro";
+
+// Asynkron funktion til at hente statiske stier
 export async function getStaticPaths() {
+  // Henter data fra en ekstern API
   const data = await fetch(
     "https://hkltapzneruelglyxqhl.supabase.co/rest/v1/Recraftcph?select=*",
     {
@@ -13,6 +16,7 @@ export async function getStaticPaths() {
     }
   ).then((response) => response.json());
 
+  // Mapper data til stier og rekvisitter
   return data.map((product) => {
     return {
       params: { slug: product.slug },
@@ -20,9 +24,12 @@ export async function getStaticPaths() {
     };
   });
 }
+
+// Henter rekvisitter fra Astro
 const { myData } = Astro.props;
 console.log(myData);
 
+// Definerer en liste over billeder
 const images = [
   "/img/grillhandsker.webp",
   "/img/grønmakeuppung.webp",
