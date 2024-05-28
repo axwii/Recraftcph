@@ -93,6 +93,18 @@ const { pageTitle } = Astro.props;
     </body>
     </html>
     <style>
+
+header {
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: white;
+      z-index: 1000; /* Ensure the header stays above other content */
+    }
+
+    main {
+      padding-top: 40px; /* Adjust this value based on the actual header height */
+    }
       nav{
           padding-top: 20px;
           
