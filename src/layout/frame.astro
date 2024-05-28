@@ -14,7 +14,27 @@ const { pageTitle } = Astro.props;
   <body>
     <header>
       <nav>
-        <a href="/">home</a><a href="/listeview">listeview</a>
+        <div class="navtop">
+            <div class="left">
+                <img src="/public/facebook.png" alt="">
+                <img src="/public/instagram.png" alt="">
+            </div>
+            <div class="logoholder">
+                <h1 class="logo">RECRAFT</h1>
+                <h1 class="logo1">CPH</h1>
+            </div>
+            
+            <div class="right">
+                <img src="/public/search.png" alt="">
+                <img src="/public/shopping-cart.png" alt="">
+            </div>
+           </div>
+           <ul>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/listeview">Products</a></li>
+            <li><a href="/singleview">Contact</a></li>
+           </ul>
       </nav>
     </header>
     <main>
@@ -72,6 +92,68 @@ const { pageTitle } = Astro.props;
     </body>
     </html>
     <style>
+            }
+      nav{
+          padding-top: 20px;
+          
+      }
+      .navtop{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 2px black solid;
+          padding-bottom:20px ;
+          
+      }
+      ul{
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          list-style: none;
+          justify-items: center;
+          width: 50%;
+          margin-left: 25%;
+          padding-top: 20px;
+         
+      }
+      a{
+          text-decoration: none;
+          color: black;
+          font-size: 24px;
+      }
+      a:hover{
+          color:#CCAB8F ;
+      }
+      .left{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          margin-left: 5%;
+          gap: 1rem;
+      }
+      .right{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          margin-right: 5%;
+          gap: 1rem;
+      }
+      .logo{
+          font-size: 30px;
+         
+          
+      }
+      .logo1{
+          font-size: 30px;
+          margin-left: 42px;
+          
+          
+      }
+      .logoholder{
+          display: grid;
+          grid-template-rows: 1fr 1fr;
+          margin: 0;
+          padding: 0;
+          align-items: baseline;
+      }
+
       footer {
         border-top: 1px solid;
         background-color: #F4F4F4;
