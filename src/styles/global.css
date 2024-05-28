@@ -1,12 +1,21 @@
-@font-face {font-family: "LibreCaslon"; src: url(/public/font/LibreCaslonDisplay-Regular.ttf);}
-@font-face {font-family: "Abhaya-regular"; src: url(../../public/font/AbhayaLibre-Regular.ttf);}
-@font-face {font-family: "Abhaya-bold"; src: url(../../public/font/AbhayaLibre-Bold.ttf);}
+@font-face {
+  font-family: "LibreCaslon";
+  src: url(/public/font/LibreCaslonDisplay-Regular.ttf);
+}
+@font-face {
+  font-family: "Abhaya-regular";
+  src: url(../../public/font/AbhayaLibre-Regular.ttf);
+}
+@font-face {
+  font-family: "Abhaya-bold";
+  src: url(../../public/font/AbhayaLibre-Bold.ttf);
+}
 
 :root {
   /* Farver */
   --brand-color: #290331;
   --brand-color-highlight: #d44402;
-  --brand-color-muted: #A46CE0;
+  --brand-color-muted: #a46ce0;
 
   --text-white: #fff;
   --text-black: #000;
@@ -99,15 +108,15 @@ h2 {
 h3 {
   font-size: var(--font-size-h3);
 }
-h4{
+h4 {
   font-size: var(--font-size-h4);
 }
 
 p {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-regular);
   font-family: Abhaya-regular;
 }
-.bold{
+.bold {
   font-family: Abhaya-bold;
   font-size: large;
 }
