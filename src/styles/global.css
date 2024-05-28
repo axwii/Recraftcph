@@ -2,9 +2,14 @@
   font-family: "LibreCaslon";
   src: url(/public/font/LibreCaslonDisplay-Regular.ttf);
 }
-@font-face {
+/* @font-face {
   font-family: "Abhaya-regular";
   src: url(../../public/font/AbhayaLibre-Regular.ttf);
+} */
+
+@font-face {
+  font-family: "Abhaya-regular";
+  src: url(/font/AbhayaLibre-Regular.ttf);
 }
 /* @font-face {
   font-family: "Abhaya-bold";
