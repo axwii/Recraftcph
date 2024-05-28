@@ -1,140 +1,96 @@
 ---
 import Frame from "../layout/frame.astro";
 ---
+
 <Frame title="Product title">
-    <nav>
-  
-      <section id="top_grid">
-          <div>
-              <h1 class="hvem">Hvem er RecraftCph</h1>
-              <p class="text">Selvfølgelig! Recraft Cph er en innovativ dansk virksomhed, der bærer bæredygtighedens fane højt inden for modeverdenen. Med en dedikation til genbrug og genanvendelse af materialer har de specialiseret sig i at skabe stilfulde accessories og tøj med en unik og miljøvenlig tilgang. Deres produkter er ikke kun æstetisk tiltalende, men også et skridt i retning af en mere ansvarlig modeindustri, hvor spild reduceres, og ressourcer udnyttes optimalt. Recraft Cph's vision om at fusionere stil med bæredygtighed gør dem til en frontløber i kampen for en grønnere fremtid inden for mode.</p>
-          </div>
-          <img class="videoholder" src="/public/video-placeholder.jpg" alt="">
-      </section>
-      <section id="bot_grid">
-          <h1 class="mover">Mød Mille</h1>
-          <img class="profil" src="/public/milleprofil.webp" alt="">
-          <p class="text1">Hejsa, Mit navn er Mille Marie og det er mig som er designeren og syersken bag mit brand: Recraft cph.Jeg går ind for bæredygtighed og genanvendelse af fraklippet læder og tekstiler.
-              Recraft cph arbejder med enkelthed og funktionalitet.
-              Læderet, som er 100% ægte, er overskud fra møbelproduktion.Der skæres store mængder læder fra, når der produceres møbler, som normalt ender til forbrænding.Recraft cph opkøber dette restlæder og overskudslæder fra en møbelproducent og upcycler det helt ubrugte læder til nye og lækre produkter.</p>
-              <button class="Kontakt">Kontakt</button>
-      </section>
-</Frame>
+  <div id="top_grid">
+    <div>
+      <h2 class="hvem">Hvem er RecraftCph</h2>
+      <p class="text">
+        Recraft Cph er en innovativ dansk virksomhed, der bærer bæredygtighedens
+        fane højt inden for modeverdenen. Med en dedikation til genbrug og
+        genanvendelse af materialer har de specialiseret sig i at skabe
+        stilfulde accessories og tøj med en unik og miljøvenlig tilgang. Deres
+        produkter er ikke kun æstetisk tiltalende, men også et skridt i retning
+        af en mere ansvarlig modeindustri, hvor spild reduceres, og ressourcer
+        udnyttes optimalt. Recraft Cph's vision om at fusionere stil med
+        bæredygtighed gør dem til en frontløber i kampen for en grønnere fremtid
+        inden for mode.
+      </p>
+    </div>
+    <img class="videoholder" src="/public/video-placeholder.jpg" alt="" />
+  </div>
+  <div id="top_grid">
+    <img class="profil" src="/public/img/milleabout.webp" alt="" />
+    <div class="moed">
+      <h2 class="mover">Mød Mille</h2>
+      <p class="text1">
+        Hejsa, Mit navn er Mille Marie og det er mig som er designeren og
+        syersken bag mit brand: Recraft cph.Jeg går ind for bæredygtighed og
+        genanvendelse af fraklippet læder og tekstiler. Recraft cph arbejder
+        med enkelthed og funktionalitet. Læderet, som er 100% ægte, er overskud
+        fra møbelproduktion.Der skæres store mængder læder fra, når der
+        produceres møbler, som normalt ender til forbrænding.Recraft cph opkøber
+        dette restlæder og overskudslæder fra en møbelproducent og upcycler det
+        helt ubrugte læder til nye og lækre produkter.
+      </p>
+      <button class="btn">Kontakt</button>
+    </div>
+  </div>
+
   <style>
-      *{
-          padding: 0;
-          margin: 0;}
-      #top_grid{
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-  
+    #top_grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 40px;
+      margin-top: 20px;
+    }
+    .profil {
+      margin: auto;
+    }
+    .moed {
+      margin-left: 30px;
+      margin-top: 20px;
+      margin: auto;
+    }
+    .text1,
+    .text {
+      max-width: 65ch;
+      margin: auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .text {
+      margin: auto;
+      margin-top: 10px;
+    }
+    .btn {
+      margin: auto;
+    }
+    .mover {
+      margin-left: -4px;
+    }
+    .hvem {
+      text-align: center;
+      margin-left: -7px;
+    }
+    @media (max-width: 800px) {
+      #top_grid {
+        display: block;
       }
-      .text{
-          font-size: 32px;
-          margin: 75px;
-          
+      .profil {
+        display: block;
+        margin: 20px auto;
       }
-      .text1{
-          font-size: 32px;
-          margin: 75px;
-          
+      .moed {
+        margin: auto;
       }
-      .hvem{
-          font-size: 110px;
-          text-align: center;
-         
+      .mover,
+      .btn {
+        display: block;
+        margin: 10px auto;
+        text-align: center
       }
-      .mover{
-          font-size: 110px;
-          text-align: center;
-      }
-      #bot_grid{
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-      }
-      .profil{
-          width:70%;
-          
-  
-      }
-      .videoholder{
-          width:100%;
-      }
-      .Kontakt{
-          background-color: #616C5B;
-    color: white;
-    font-size: 50px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
-  
-      }
-      @media only screen and (min-width: 992px){
-          
-          #top_grid{
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-          }
-          #bot_grid{
-              display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      grid-column-gap: 0px;
-      grid-row-gap: 0px;
-      padding-top: 100px;
-  }
-          .videoholder{
-              margin-top: 15%;
-          }
-          .text {
-              font-size: 25px;
-              margin: 75px;
-          }
-          .hvem{
-              font-size: 66px;
-              text-align: center;
-              margin-top: 20%;
-          }
-          .mover{
-              font-size: 50px;
-      text-align: start;
-      margin-top: 0%;
-      grid-area: 1 / 2 / 2 / 3;
-      margin-bottom: 25%;
-  
-          }
-          .profil{
-              grid-area: 1 / 1 / 3 / 2; 
-              width: 50%;
-              margin-left: 20%;
-              margin-bottom: 30%;
-          }
-          .text1{
-              font-size: 27px;
-      margin: 0px;
-      grid-area: 1 / 2 / 2 / 3;
-      margin-top: 0%;
-      width: 95%;
-      padding-top: 25%;
-          
-          }
-          .Kontakt{
-              grid-area: 2 / 2 / 3 / 3;
-      background-color: #616C5B;
-      color: white;
-      font-size: 21px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: 0px;
-      padding-right: 0px;
-      width: 25%;
-      margin-bottom: 40%;
-              
-          }          
-      }
+    }
   </style>
-  
+</Frame>
