@@ -30,14 +30,15 @@ const { myData } = Astro.props;
 console.log(myData);
 
 // Definerer en liste over billeder
-const images = myData.ProductImages.map(imageObject => "/products/img/" + imageObject.img_path);
-
+const images = myData.ProductImages.map(
+  (imageObject) => "/products/img/" + imageObject.img_path
+);
 ---
 
 <Frame title="Product title">
   <script>
     // Liste over billeder til slideshowet
-    const images = JSON.parse(document.currentScript.getAttribute('images'));
+    const images = JSON.parse(document.currentScript.getAttribute("images"));
 
     // Funktion til at skifte til næste/forrige slide
     window.plusSlides = function (n) {
@@ -60,22 +61,23 @@ const images = myData.ProductImages.map(imageObject => "/products/img/" + imageO
     // Initialiserer slideIndex til 0, så den første slide vises som standard
     let slideIndex = 0;
 
-// Funktion til at vise slides
-function showSlides() {
-  // Hent alle elementer med klassen "mySlides"
-  const slides = document.getElementsByClassName("mySlides");
-  
-  // Gør alle slides usynlige
-  for (let i = 0; i < slides.length; i++) {
-    (slides[i] as HTMLElement).style.display = "none";
-  }
-  
-  // Gør den aktuelle slide synlig
-  (slides[slideIndex] as HTMLElement).style.display = "block";
-  
-  // Gør den næste slide synlig (loop tilbage til start hvis det er den sidste slide)
-  (slides[(slideIndex + 1) % slides.length] as HTMLElement).style.display = "block";
-}
+    // Funktion til at vise slides
+    function showSlides() {
+      // Hent alle elementer med klassen "mySlides"
+      const slides = document.getElementsByClassName("mySlides");
+
+      // Gør alle slides usynlige
+      for (let i = 0; i < slides.length; i++) {
+        (slides[i] as HTMLElement).style.display = "none";
+      }
+
+      // Gør den aktuelle slide synlig
+      (slides[slideIndex] as HTMLElement).style.display = "block";
+
+      // Gør den næste slide synlig (loop tilbage til start hvis det er den sidste slide)
+      (slides[(slideIndex + 1) % slides.length] as HTMLElement).style.display =
+        "block";
+    }
 
     // Initial visning af slides
     window.onload = showSlides;
@@ -87,11 +89,16 @@ function showSlides() {
     <div class="slideshow-container">
       <!-- Full-width images with number and caption text -->
       <div class="slides-wrapper" style="display: flex;">
-        {images.map((image, index) => (
-          <div class="mySlides fade" style={`display: ${index < 2 ? "block" : "none"}`}>
-            <img src={image} class="slide-img" />
-          </div>
-        ))}
+        {
+          images.map((image, index) => (
+            <div
+              class="mySlides fade"
+              style={`display: ${index < 2 ? "block" : "none"}`}
+            >
+              <img src={image} class="slide-img" />
+            </div>
+          ))
+        }
       </div>
 
       <!-- Next and previous buttons -->
@@ -117,39 +124,44 @@ function showSlides() {
     <button class="btn">Læg i kurv</button>
   </div>
 
-<div class="product-info-mobile">
-  <h3 class="productname">{myData.name}</h3>
-  <h3 class="price">{myData.price} kr</h3>
-  <p>Inklusiv moms</p>
-  <div class="custom-select">
-    <select>
-      <option value="">Farve</option>
-      <option value="">Blå</option>
-      <option value="">Orange</option>
-      <option value="">Gul</option>
-      <option value="">Rød</option>
-    </select>
-    <span class="custom-arrow"></span>
+  <div class="product-info-mobile">
+    <h3 class="productname">{myData.name}</h3>
+    <h3 class="price">{myData.price} kr</h3>
+    <p>Inklusiv moms</p>
+    <div class="custom-select">
+      <select>
+        <option value="">Farve</option>
+        <option value="">Blå</option>
+        <option value="">Orange</option>
+        <option value="">Gul</option>
+        <option value="">Rød</option>
+      </select>
+      <span class="custom-arrow"></span>
+    </div>
+    <button class="btn">Læg i kurv</button>
   </div>
-  <button class="btn">Læg i kurv</button>
-</div>
 
-<div class="grid_1-1">
-  <div class="venstre">
-    {myData.description.map((desc) => (
-      <div>
-        <p>{desc}</p>
-      </div>
-    ))}
+  <div class="grid_1-1">
+    <div class="venstre">
+      {
+        myData.description.map((desc) => (
+          <div>
+            <p>{desc}</p>
+          </div>
+        ))
+      }
+    </div>
+    <div class="højre">
+      <h4>You might also like</h4>
+      <img src="../../public/img/tehætte.webp" alt="hætte" style="width:65%" />
+    </div>
   </div>
-  <div class="højre">
-    <h4>You might also like</h4>
-    <img src="../../public/img/tehætte.webp" alt="hætte" style="width:65%" />
-  </div>
-</div>
 </Frame>
 
 <style>
+  main {
+    padding-top: 46px;
+  }
   .slideshow-and-product-container {
     position: relative;
     text-align: center;
@@ -219,13 +231,13 @@ function showSlides() {
   }
 
   .venstre > div {
-  border-top: 1.5px solid;
-  padding: 20px;
-}
+    border-top: 1.5px solid;
+    padding: 20px;
+  }
 
-.venstre > div:last-child {
-  border-bottom: 1.5px solid;
-}
+  .venstre > div:last-child {
+    border-bottom: 1.5px solid;
+  }
 
   .venstre {
     margin-top: 80px;
