@@ -70,7 +70,7 @@ import Frame from "../layout/frame.astro";
   </div>
   <h2>Accesories</h2>
   <div class="billede_container">
-    <img src="img/makeuppung.webp" alt="makeup pung" />
+    <img src="img/forsidemakeuppung.webp" alt="makeup pung" />
     <img src="img/grøntaske.webp" alt="grøn taske" class="ekstra_img" />
     <div class="tekst_knap">
       <p>
@@ -148,6 +148,10 @@ import Frame from "../layout/frame.astro";
     padding-bottom: 20px;
   }
   .mille_container p {
+    margin-top: 20px;
+  }
+
+  .billede_container img {
     margin-top: 20px;
   }
 
@@ -233,11 +237,12 @@ import Frame from "../layout/frame.astro";
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr;
       align-items: center;
+      margin-top: 20px;
     }
 
-    /* .billede_container img {
+    .billede_container img {
       margin: 5px;
-    } */
+    }
 
     /* Vis de ekstra billeder på desktop */
     .ekstra_img {
