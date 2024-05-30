@@ -25,7 +25,7 @@ import Frame from "../layout/frame.astro";
 
   <h2 class="intro">En verden i læder</h2>
   <p class="velkommen">
-    Velkommen til Recraft cph, hvor hvert produkt er et skridt mod en mere
+    Velkommen til Recraft Cph, hvor hvert produkt er et skridt mod en mere
     bæredygtig fremtid og en hyldest til den skønhed, vi finder i genanvendelse
     og kreativitet.
   </p>
@@ -33,7 +33,7 @@ import Frame from "../layout/frame.astro";
     <img src="img/mille.webp" alt="mille" />
     <p>
       Hejsa, Mit navn er Mille Marie, og det er mig som er designeren og
-      syersken bag mit brand: Recraft cph. Jeg går ind for bæredygtighed og
+      syersken bag mit brand: Recraft Cph. Jeg går ind for bæredygtighed og
       genanvendelse af fraklippet læder og tekstiler.
 
       <br /><br />Min passion for håndværk og kærlighed til miljøet driver mig
@@ -186,7 +186,8 @@ import Frame from "../layout/frame.astro";
   .karrusel_container {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 50vh;
+    margin-top: 50px;
     overflow: hidden;
   }
 
@@ -196,7 +197,7 @@ import Frame from "../layout/frame.astro";
   }
 
   .karrusel img {
-    height: 100vh;
+    height: 50vh;
     object-fit: cover;
   }
 
@@ -206,22 +207,22 @@ import Frame from "../layout/frame.astro";
   .naeste {
     cursor: pointer;
     position: absolute;
-    transform: 50%;
+    top: calc(50% - 40px);
     width: auto;
     padding: 16px;
     color: white;
-    font-size: 20px;
+    font-size: 24px;
     border: none;
     z-index: 1;
   }
 
   .forrige {
-    left: 0;
+    left: 10px;
     border-radius: 3px 0 0 3px;
   }
 
   .naeste {
-    right: 0;
+    right: 10px;
     border-radius: 0 3px 3px 0;
   }
 
@@ -265,26 +266,6 @@ import Frame from "../layout/frame.astro";
     .intro {
       margin-top: 50px;
     }
-  }
-
-  /* Karrusel */
-  .karrusel_container {
-    height: 100vh;
-    margin-top: 50px;
-  }
-
-  .forrige,
-  .naeste {
-    font-size: 24px;
-    top: calc(50% - 40px);
-  }
-
-  .forrige {
-    left: 10px;
-  }
-
-  .naeste {
-    right: 10px;
   }
 </style>
 
