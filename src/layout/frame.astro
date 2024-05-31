@@ -69,7 +69,9 @@ const { pageTitle } = Astro.props;
             </li>
           </div>
           <div class="col3">
-            <p class="bold hide-on-small">Nyhedsbrev</p><form action="/action_page.php">
+            <p class="bold hide-on-small">Nyhedsbrev</p><form
+              action="/action_page.php"
+            >
               <input
                 type="text"
                 placeholder="E-mailadresse"
@@ -289,10 +291,10 @@ const { pageTitle } = Astro.props;
   }
 
   @media (max-width: 600px) {
-  .hide-on-small {
-    display: none;
+    .hide-on-small {
+      display: none;
+    }
   }
-}
 
   /* Media Query for screens under 800px */
   @media (max-width: 800px) {
@@ -325,9 +327,18 @@ const { pageTitle } = Astro.props;
     }
 
     .navul {
-    width: 90%;
-    margin: 0 auto;
-    padding: 20px 0 0 0;
-  }
+      width: 90%;
+      margin: 0 auto;
+      padding: 20px 0 0 0;
+    }
+
+    .flexboxitems {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .flexboximg img{
+      margin: 10px auto;
+    }
   }
 </style>
