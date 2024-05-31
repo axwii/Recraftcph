@@ -23,6 +23,7 @@ const categories = [...new Set(allData.map((item) => item.category))].map(
     };
   }
 );
+console.log(allData);
 ---
 
 <Frame pageTitle="Recraftcph - Produkter">
@@ -44,7 +45,7 @@ const categories = [...new Set(allData.map((item) => item.category))].map(
     {
       allData.map((item) => {
         return (
-          <a href={`/${item.slug}`}>
+          <a href={`././${item.slug}`}>
             <ProductCard data={item} />
           </a>
         );
