@@ -1,6 +1,6 @@
 ---
 // @ts-nocheck
-import Frame from "../../layout/frame.astro";
+import Frame from "../layout/frame.astro";
 
 // Asynkron funktion til at hente statiske stier
 export async function getStaticPaths() {
@@ -152,8 +152,11 @@ const images = myData.ProductImages.map(
       }
     </div>
     <div class="højre">
-      <h4>You might also like</h4>
-      <img src="../public/img/tehætte.webp" alt="hætte" style="width:65%" />
+      <h4>Måske kan du også lide</h4>
+      <a href="/grydelap-grillhandske">
+        <img src="/img/grillhandske.webp" alt="grillhandske" style="width:65%" />
+        <p>Grydelap/Grillhandske</p>
+      </a>
     </div>
   </div>
 </Frame>

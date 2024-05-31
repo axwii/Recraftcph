@@ -27,8 +27,8 @@ const categories = [...new Set(allData.map((item) => item.category))].map(
 
 <Frame pageTitle="Recraftcph - Produkter">
   <div class="center-text">
-    <h3><br />Produkter</h3>
-    <p>Her kan du se vores produkter</p>
+    <h3>Produkter</h3>
+    <p>Håndlavet, lokalt, alt ud af kasseret læder</p>
     <p>Vi har {allData.length} produkter</p>
   </div>
   <div class="sortingBox">
@@ -44,7 +44,7 @@ const categories = [...new Set(allData.map((item) => item.category))].map(
     {
       allData.map((item) => {
         return (
-          <a href={`/products/${item.slug}`}>
+          <a href={`/${item.slug}`}>
             <ProductCard data={item} />
           </a>
         );
