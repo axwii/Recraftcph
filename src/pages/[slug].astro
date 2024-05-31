@@ -112,16 +112,19 @@ const images = myData.ProductImages.map(
     <h3 class="productname">{myData.name}</h3>
     <h4 class="price">{myData.price},00 kr</h4>
     <p>Inklusiv moms</p>
-    <div class="custom-select">
-      <select>
-        <option value="">Farve</option>
-        <option value="">Blå</option>
-        <option value="">Orange</option>
-        <option value="">Gul</option>
-        <option value="">Rød</option>
-      </select>
-      <span class="custom-arrow"></span>
-    </div>
+    {myData.colors && myData.colors.length > 0 && 
+      <div class="custom-select">
+        <select>
+          <option value="">Farve</option>
+          {
+            myData.colors.map((color) => (
+              <option value={color}>{color}</option>
+            ))
+          }
+        </select>
+        <span class="custom-arrow"></span>
+      </div>
+    }
     <button class="btn">Læg i kurv</button>
   </div>
 
@@ -139,7 +142,7 @@ const images = myData.ProductImages.map(
       <h4>Måske kan du også lide</h4>
       <a href="/grydelap-grillhandske">
         <img src="/img/grillhandske.webp" alt="grillhandske" style="width:65%" />
-        <p>Grydelap/Grillhandske</p>
+        <p style="color: #000">Grydelap/Grillhandske</p>
       </a>
     </div>
   </div>
