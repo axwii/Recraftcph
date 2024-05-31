@@ -18,7 +18,7 @@ import Frame from "../layout/frame.astro";
         inden for mode.
       </p>
     </div>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/LTrxVOFX_Sk?si=YWbYFGkk9sz1UF_T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe id="yt" width="560" height="315" src="https://www.youtube.com/embed/LTrxVOFX_Sk?si=YWbYFGkk9sz1UF_T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
   <div id="top_grid">
     <img class="profil" src="/public/img/milleabout.webp" alt="" />
@@ -34,7 +34,7 @@ import Frame from "../layout/frame.astro";
         dette restlæder og overskudslæder fra en møbelproducent og upcycler det
         helt ubrugte læder til nye og lækre produkter.
       </p>
-      <button class="btn">Kontakt</button>
+      <button id="kontakt" class="btn">Kontakt</button>
     </div>
   </div>
 
@@ -47,6 +47,12 @@ import Frame from "../layout/frame.astro";
       grid-template-columns: 1fr 1fr;
       margin-bottom: 40px;
       margin-top: 20px;
+      padding: 1rem;
+    }
+
+    #yt{
+      padding: 1rem;
+      width: 100%;
     }
     .profil {
       margin: auto;
