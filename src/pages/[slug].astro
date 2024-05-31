@@ -27,7 +27,6 @@ export async function getStaticPaths() {
 
 // Henter rekvisitter fra Astro
 const { myData } = Astro.props;
-console.log(myData);
 
 // Definerer en liste over billeder
 const images = myData.ProductImages.map(
@@ -35,10 +34,14 @@ const images = myData.ProductImages.map(
 );
 ---
 
-<Frame title="Product title">
+<Frame title={`Recractcph - ${myData.name}`}>
   <script>
     // Liste over billeder til slideshowet
-    const images = JSON.parse(document.currentScript.getAttribute("images"));
+    //const images = JSON.parse(document.currentScript.getAttribute("images"));
+    window.images = '${JSON.stringify(images)}';
+    
+    // Initialiserer slideIndex til 0, så den første slide vises som standard
+    let slideIndex = 0;
 
     // Funktion til at skifte til næste/forrige slide
     window.plusSlides = function (n) {
@@ -58,8 +61,6 @@ const images = myData.ProductImages.map(
       showSlides();
     };
 
-    // Initialiserer slideIndex til 0, så den første slide vises som standard
-    let slideIndex = 0;
 
     // Funktion til at vise slides
     function showSlides() {
