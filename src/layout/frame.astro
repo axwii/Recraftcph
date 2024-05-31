@@ -52,7 +52,7 @@ const { pageTitle } = Astro.props;
             >
           </div>
           <div class="col1">
-            <p class="bold">Information</p>
+            <p class="bold hide-on-small">Information</p>
             <li>
               <ul><a href="">Kontakt</a></ul>
               <ul><a href="">Om Recraft CPH</a></ul>
@@ -61,7 +61,7 @@ const { pageTitle } = Astro.props;
             </li>
           </div>
           <div class="col2">
-            <p class="bold">RecraftCPH</p>
+            <p class="bold hide-on-small">RecraftCPH</p>
             <li>
               <ul>Tlf. 26251870</ul>
               <ul>Email:</ul>
@@ -69,7 +69,7 @@ const { pageTitle } = Astro.props;
             </li>
           </div>
           <div class="col3">
-            <p class="bold">Nyhedsbrev</p><form action="/action_page.php">
+            <p class="bold hide-on-small">Nyhedsbrev</p><form action="/action_page.php">
               <input
                 type="text"
                 placeholder="E-mailadresse"
@@ -79,7 +79,7 @@ const { pageTitle } = Astro.props;
             </form>
           </div>
           <div class="col4">
-            <p class="bold">Forhandler</p>
+            <p class="bold hide-on-small">Forhandler</p>
             <li>
               <ul>Kunst og Køkkentøj.</ul>
               <ul>Bernikow gården</ul>
@@ -287,6 +287,13 @@ const { pageTitle } = Astro.props;
   .flexboximg1 {
     display: none;
   }
+
+  @media (max-width: 600px) {
+  .hide-on-small {
+    display: none;
+  }
+}
+
   /* Media Query for screens under 800px */
   @media (max-width: 800px) {
     .nava {
@@ -316,5 +323,11 @@ const { pageTitle } = Astro.props;
     main {
       padding-top: 46px; /* Adjust this value based on the actual header height */
     }
+
+    .navul {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0 0 0;
+  }
   }
 </style>
