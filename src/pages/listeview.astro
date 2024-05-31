@@ -23,12 +23,11 @@ const categories = [...new Set(allData.map((item) => item.category))].map(
     };
   }
 );
-console.log(allData);
 ---
 
 <Frame pageTitle="Recraftcph - Produkter">
   <div class="center-text">
-    <h3>Produkter</h3>
+    <h3 id="title">Produkter</h3>
     <p>Håndlavet, lokalt, alt ud af kasseret læder</p>
     <p>Vi har {allData.length} produkter</p>
   </div>
@@ -55,9 +54,10 @@ console.log(allData);
 </Frame>
 
 <style>
-  main {
-    padding-top: 46px;
+  #title {
+    margin-top: 60px;
   }
+
   .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -79,7 +79,7 @@ console.log(allData);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1rem;
-    max-width: 1200px; 
+    max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
   }
@@ -88,5 +88,10 @@ console.log(allData);
     border: 1px solid #ccc;
     padding: 1rem;
     text-align: center;
+  }
+  @media (max-width: 800px) {
+    #title {
+      margin-top: 30px;
+    }
   }
 </style>
