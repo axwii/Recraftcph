@@ -4,7 +4,7 @@ const { data } = Astro.props;
 
 <article>
   <div class="image-wrapper">
-    <img class="product-image" src={`/${data.image}`} alt={data.name} />
+    <img class="product-image" src={`/img/${data.image}`} alt={data.name} />
   </div>
   <h3>{data.name}</h2>
   <h4>{data.price} kr,-</h3>
