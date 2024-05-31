@@ -54,10 +54,6 @@ const categories = [...new Set(allData.map((item) => item.category))].map(
 </Frame>
 
 <style>
-  #title {
-    margin-top: 60px;
-  }
-
   .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -88,10 +84,5 @@ const categories = [...new Set(allData.map((item) => item.category))].map(
     border: 1px solid #ccc;
     padding: 1rem;
     text-align: center;
-  }
-  @media (max-width: 800px) {
-    #title {
-      margin-top: 30px;
-    }
   }
 </style>
