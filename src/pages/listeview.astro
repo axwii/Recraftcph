@@ -2,7 +2,8 @@
 import Frame from "../layout/frame.astro";
 import ProductCard from "../components/ProductCard.astro";
 
-const data = await fetch(
+// Fetch all products
+const allData = await fetch(
   "https://hkltapzneruelglyxqhl.supabase.co/rest/v1/Recraftcph?select=*",
   {
     method: "GET",
@@ -12,23 +13,36 @@ const data = await fetch(
     },
   }
 ).then((res) => res.json());
+
+// Get unique categories and count of products in each category
+const categories = [...new Set(allData.map((item) => item.category))].map(
+  (category) => {
+    return {
+      name: category,
+      count: allData.filter((item) => item.category === category).length,
+    };
+  }
+);
 ---
 
 <Frame pageTitle="Recraftcph - Produkter">
   <div class="center-text">
-    <h1>Produkter</h1>
+    <h3><br />Produkter</h3>
     <p>Her kan du se vores produkter</p>
-    <p>Vi har {data.length} produkter</p>
+    <p>Vi har {allData.length} produkter</p>
   </div>
   <div class="sortingBox">
-    <p>Tasker</p>
-    <p>Nibs</p>
-    <p>Køkken</p>
-    <p>Pynt</p>
+    {
+      categories.map((category) => (
+        <p>
+          {category.name} ({category.count})
+        </p>
+      ))
+    }
   </div>
   <section class="product-grid">
     {
-      data.map((item) => {
+      allData.map((item) => {
         return (
           <a href={`/products/${item.slug}`}>
             <ProductCard data={item} />
@@ -63,6 +77,8 @@ const data = await fetch(
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1rem;
+    max-width: 1200px; /* Same as .product-grid */
+    margin: 0 auto 2rem auto; /* Adds a 2rem gap at the bottom */
   }
 
   .sortingBox p {
