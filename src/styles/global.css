@@ -1,15 +1,15 @@
 @font-face {
   font-family: "LibreCaslon";
-  src: url(../../public/font/LibreCaslonDisplay-Regular.ttf);
+  src: url(/font/LibreCaslonDisplay-Regular.ttf);
 }
 @font-face {
   font-family: "Abhaya-regular";
-  src: url(../../public/font/AbhayaLibre-Regular.ttf);
+  src: url(/font/AbhayaLibre-Regular.ttf);
 }
 
 @font-face {
   font-family: "Abhaya-bold";
-  src: url(../../public/font/AbhayaLibre-Bold.ttf);
+  src: url(/font/AbhayaLibre-Bold.ttf);
 }
 
 :root {
